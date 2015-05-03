@@ -242,7 +242,12 @@
         <h2 class="subscribe-confirmation__title">Check your inbox</h2>
         <p class="subscribe-confirmation__message">We've sent The Complete Packing List for Thailand to your Email. Please check Spam folder if you won't have received it in 5 minutes.</p>
         <nav class="subscribe-confirmation__socials">
-          <h3>Help us get famous</h3><img src="/images/social_dummy.png" alt="Заглушка для социальных сетей"/>
+          <h3>Help us get famous</h3>
+          <div class="social-likes social-likes_both">
+            <div title="Share link on Facebook" class="facebook">Share</div>
+            <div title="Share link on Twitter" data-via="vacaykit" class="twitter">Tweet</div>
+            <div title="Share image on Pinterest" data-media="images/header_bg_5.jpg" class="pinterest">Pin</div>
+          </div>
         </nav>
         <nav><a href="#" class="popup__close"></a></nav>
       </div>
@@ -256,8 +261,9 @@
           {{/each}}
         </span>
       </span>
-        
+      
     </script>
+    <script src="/js/placeholders/dist/placeholders.min.js" defer="defer" async="async"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
