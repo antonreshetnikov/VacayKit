@@ -67,8 +67,8 @@ html(lang="en")
         span  All rights reserved.
       nav.project
         a.project__link(href="#") Blog
-        a.project__link(href="content.html") About
-        a.project__link.project__link_selected(href="contacts.html") Contact us
+        a.project__link(href="/content/index.html") About
+        a.project__link.project__link_selected(href="/contacts/index.html") Contact us
       nav.social
         a.fb(href="http://www.facebook.com/vacaykit")
         a.tw(href="http://twitter.com/vacaykit")
@@ -96,7 +96,10 @@ html(lang="en")
         p.subscribe-confirmation__message We've sent The Complete Packing List for Thailand to your Email. Please check Spam folder if you won't have received it in 5 minutes.
         nav.subscribe-confirmation__socials
           h3 Help us get famous
-          img(src="/images/social_dummy.png", alt="Заглушка для социальных сетей")
+          .social-likes.social-likes_both
+            .facebook(title="Share link on Facebook") Share
+            .twitter(title="Share link on Twitter",  data-via="vacaykit") Tweet
+            .pinterest(title="Share image on Pinterest", data-media="/images/header_bg_5.jpg") Pin
         nav
           a.popup__close(href="#")
 
@@ -109,6 +112,8 @@ html(lang="en")
           {{/each}}
         </span>
       </span>
+      
+    script(src="/js/placeholders/dist/placeholders.min.js", defer, async)
         
     script.
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -117,3 +122,4 @@ html(lang="en")
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
       ga('create', 'UA-62123734-1', 'auto');
       ga('send', 'pageview');
+    

@@ -180,6 +180,18 @@ body
         line-height 62px
 
 @media (max-width: $mobile)
+  html.no-csstransitions>body>header
+    .project
+      &__wrapper,
+      &__lightbox
+        display none
+
+  html.no-csstransitions>body.menu_open>header
+    .project
+      &__wrapper,
+      &__lightbox
+        display block
+
   html>body.menu_open>header
     .project
       position fixed
@@ -248,7 +260,7 @@ body
         overflow-y auto
         box-sizing border-box
         width 81%
-        width 81vw
+        // width 81vw
         background-color $opaq-grey-light
         line-height 20px
         clearit()

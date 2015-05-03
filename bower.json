@@ -12,6 +12,7 @@
     "d3": "~3.5.5",
     "jquery": "~2.1.3",
     "handlebars": "~3.0.0",
-    "social-likes": "~3.0.14"
+    "social-likes": "~3.0.14",
+    "placeholders": "~4.0.1"
   }
 }

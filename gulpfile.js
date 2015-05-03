@@ -140,7 +140,7 @@ gulp.task('js', function() {
 
 gulp.task('css', function() {
   return gulp.src([dirs.source.stylus, dirs.source.css])
-    .pipe(watch([dirs.source.stylus, dirs.source.css]))
+    // .pipe(watch([dirs.source.stylus, dirs.source.css]))
     .pipe(plumber())
     .pipe(gulpif(/[.]styl$/, stylus({compress: true})))
     .pipe(csso())
