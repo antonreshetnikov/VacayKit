@@ -1,0 +1,27 @@
+mixin header_navigation(selected)
+  nav.project
+    a(href="home.html")
+      h1.logotype VacayKit
+
+    button.hamburger(type="button")
+      span.hamburger__line.hamburger__line_top
+      span.hamburger__line.hamburger__line_middle
+      span.hamburger__line.hamburger__line_bottom
+    .project__wrapper
+      a.project__link.project__link_mobile(href="home.html", class=(selected == 'Home' ? "project__link_selected" : "")) Home
+      .dropdown
+        h2.dropdown__title Popular Kits
+        .dropdown__panel
+          .dropdown__wrapper
+            ul.dropdown__body
+              li: a(href="#", class=(selected == 'Beaching' ? "project__link_selected" : "")) Beaching
+              li: a(href="#", class=(selected == 'Surfing' ? "project__link_selected" : "")) Surfing
+              li: a(href="#", class=(selected == 'Caving' ? "project__link_selected" : "")) Caving
+              li: a(href="#", class=(selected == 'Diving' ? "project__link_selected" : "")) Diving
+              li: a(href="#", class=(selected == 'Snorkeling' ? "project__link_selected" : "")) Snorkeling
+              li: a(href="#", class=(selected == 'Jungle' ? "project__link_selected" : "")) Jungle
+      a.project__link(href="#", class=(selected == 'Blog' ? "project__link_selected" : "")) Blog
+      a.project__link(href="content.html", class=(selected == 'About' ? "project__link_selected" : "")) About
+      a.project__link.project__link_mobile(href="contacts.html", class=(selected == 'Contact us' ? "project__link_selected" : "")) Contact us
+    
+    .project__lightbox

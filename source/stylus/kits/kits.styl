@@ -34,7 +34,7 @@
     box-shadow none
     box-sizing border-box
     height 45px
-    background url('../svg/close-kits.svg') 50% 50% no-repeat
+    background url('/svg/close-kits.svg') 50% 50% no-repeat
 
     &-input
       position absolute
@@ -101,7 +101,7 @@
       left 57px
       width 22px
       height 22px
-      background $pink url('../svg/warning.svg') 50% 50% no-repeat
+      background $pink url('/svg/warning.svg') 50% 50% no-repeat
       border-radius 100%
       border 2px solid #fff
 
@@ -181,7 +181,7 @@
       &-input
         &:checked ~ .kits__trigger,
         &:checked + .kits__trigger
-          background url('../svg/open-kits.svg') 50% 50% no-repeat
+          background url('/svg/open-kits.svg') 50% 50% no-repeat
           & + .kits__menu
             width 90px
             .kits__kit
@@ -221,10 +221,10 @@
       margin 0
     &__trigger
       display block
-      background-image url('../svg/unopen.svg')
+      background-image url('/svg/unopen.svg')
       &-input
         &:checked + .kits__trigger
-          background-image url('../svg/open.svg')
+          background-image url('/svg/open.svg')
           & + .kits__menu
             width auto
             height 75px

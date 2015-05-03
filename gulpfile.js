@@ -14,9 +14,15 @@ var gulp = require('gulp')
     , path = require('path')
     , iconfont = require('gulp-iconfont')
     , gulpif = require('gulp-if')
+    , csso = require('gulp-csso')
+    , plumber = require('gulp-plumber')
+    , watch = require('gulp-watch')
+    , rename = require("gulp-rename")
     , dirs = {
       'source': {
         'jade': './source/jade/**/*.jade'
+        , 'jade_dir': './source/jade/'
+        , 'partials': './source/partials/**/*.jade'
         , 'list': './source/list/index.jade'
         , 'copy': './source/copy/**/*'
         , 'coffee': './source/coffee/**/*.coffee'
@@ -47,12 +53,13 @@ gulp.task('list', function () {
         , file;
     for(var i=0; i<files.length; i++){
       file = files[i];
-      if(file.indexOf('index.html')>-1 || (file.match(/\//g) || []).length>1){
+      if(file.indexOf('index.html') == -1 || (file.match(/\//g) || []).length != 2){
         continue;
       }
-      names.push(path.basename(file))
+      names.push(path.dirname(file).replace('build/', ''));
     }
     gulp.src(dirs.source.list)
+      .pipe(plumber())
       .pipe(jade({
         pretty: true
         , locals: {'pages': names}
@@ -63,6 +70,7 @@ gulp.task('list', function () {
 
 gulp.task('images', function () {
   return gulp.src(dirs.source.images)
+          .pipe(plumber())
           .pipe(gulpif(/[.](png|jpeg|jpg|svg)$/, imagemin({
               progressive: true,
               svgoPlugins: [{removeViewBox: false}],
@@ -74,6 +82,7 @@ gulp.task('images', function () {
 
 gulp.task('svg', function () {
   return gulp.src(dirs.source.svg)
+          .pipe(plumber())
           .pipe(imagemin({
               progressive: true,
               svgoPlugins: [{removeViewBox: false}],
@@ -89,6 +98,7 @@ gulp.task('copyfonts', function() {
 
 gulp.task('iconfont', function(){
   gulp.src(dirs.source.svg4font)
+    .pipe(plumber())
     .pipe(iconfont({
       fontName: 'icon',
       appendCodepoints: true
@@ -101,17 +111,27 @@ gulp.task('iconfont', function(){
 
 gulp.task('fonts', function() {
   return gulp.src(dirs.source.fonts)
+    .pipe(plumber())
     .pipe(gulp.dest(dirs.build.fonts));
 });
 
 gulp.task('html', function() {
   return gulp.src(dirs.source.jade)
+    .pipe(watch(dirs.source.jade))
+    .pipe(watch(dirs.source.partials))
+    .pipe(plumber())
     .pipe(jade({pretty: true}))
+    .pipe(rename(function (path) {
+      path.dirname += '/'+path.basename+'/';
+      path.basename = "index";
+      }))
     .pipe(gulp.dest(dirs.build.html));
 });
 
 gulp.task('js', function() {
   return gulp.src([dirs.source.coffee, dirs.source.js])
+    // .pipe(watch([dirs.source.coffee, dirs.source.js]))
+    .pipe(plumber())
     .pipe(gulpif(/[.]coffee$/, coffee({bare: true})))
     .pipe(order(['currency/currency.js']))
     .pipe(concat("scripts.js"))
@@ -120,7 +140,10 @@ gulp.task('js', function() {
 
 gulp.task('css', function() {
   return gulp.src([dirs.source.stylus, dirs.source.css])
-    .pipe(stylus())
+    .pipe(watch([dirs.source.stylus, dirs.source.css]))
+    .pipe(plumber())
+    .pipe(gulpif(/[.]styl$/, stylus({compress: true})))
+    .pipe(csso())
     .pipe(order(['fonts.css', 'reset.css']))
     .pipe(concat("styles.css"))
     .pipe(autoprefixer({
@@ -132,10 +155,11 @@ gulp.task('css', function() {
 
 gulp.task('deploy', function () {
   console.log('deploying');
-  return gulp.src('build/**')
+  return gulp.src('./build/**')
+          .pipe(plumber())
           .pipe(deploy({
             cacheDir:   'gh-cache',
-            remoteUrl:  'git@github.com:SilentImp/VacayKit.git'
+            remoteUrl:  'git@github.com:antonreshetnikov/VacayKit.git'
           }).on('error', function(){
             console.log('error', arguments);
           }));
@@ -148,4 +172,5 @@ gulp.task('watch', function () {
   gulp.watch(dirs.source.coffee, ['js']);
 });
 
+gulp.task('watcher', ['html', 'css', 'js']);
 gulp.task('default', ['html', 'css', 'js', 'list', 'images', 'svg']);

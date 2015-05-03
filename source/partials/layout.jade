@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="apple-mobile-web-app-capable", content="yes")
+    meta(name="application-name" content="VacayKit")
+    meta(name="msapplication-TileImage", content="/images/favicon/apple-icon-precomposed.png")
+    meta(name="msapplication-TileColor" content="#ffffff")
+
+    block title
+      title VacayKit
+
+    link(rel="icon", type="image/svg+xml", href="/images/favicon/vacaykit_favicon.svg")
+
+    link(rel="icon", sizes="16x16", type="image/x-icon", href="/images/favicon/favicon.ico")
+    link(rel="icon", sizes="16x16", type="image/png", href="/images/favicon/favicon-16x16.png")
+    link(rel="icon", sizes="32x32", type="image/png", href="/images/favicon/favicon-32x32.png")
+    link(rel="icon", sizes="96x96", type="image/png", href="/images/favicon/favicon-96x96.png")
+
+    link(rel="icon", sizes="36x36", href="/images/favicon/android-icon-36x36.png")
+    link(rel="icon", sizes="48x48", href="/images/favicon/android-icon-48x48.png")
+    link(rel="icon", sizes="72x72", href="/images/favicon/android-icon-72x72.png")
+    link(rel="icon", sizes="144x144", href="/images/favicon/android-icon-144x144.png")
+    link(rel="icon", sizes="192x192", href="/images/favicon/android-icon-192x192.png")
+
+    link(rel="icon", sizes="70x70", href="/images/favicon/ms-icon-70x70.png")
+    link(rel="icon", sizes="150x150", href="/images/favicon/ms-icon-150x150.png")
+    link(rel="icon", sizes="310x310", href="/images/favicon/ms-icon-310x310.png")
+
+    link(rel="apple-touch-icon", href="/images/favicon/apple-icon.png")
+    link(rel="apple-touch-icon", sizes="57x57", href="/images/favicon/apple-icon-57x57.png")
+    link(rel="apple-touch-icon", sizes="60x60", href="/images/favicon/apple-icon-60x60.png")
+    link(rel="apple-touch-icon", sizes="72x72", href="/images/favicon/apple-icon-72x72.png")
+    link(rel="apple-touch-icon", sizes="76x76", href="/images/favicon/apple-icon-76x76.png")
+    link(rel="apple-touch-icon", sizes="114x114", href="/images/favicon/apple-icon-114x114.png")
+    link(rel="apple-touch-icon", sizes="120x120", href="/images/favicon/apple-icon-120x120.png")
+    link(rel="apple-touch-icon", sizes="144x144", href="/images/favicon/apple-icon-144x144.png")
+    link(rel="apple-touch-icon", sizes="152x152", href="/images/favicon/apple-icon-152x152.png")
+    link(rel="apple-touch-icon", sizes="180x180", href="/images/favicon/apple-icon-180x180.png")
+    link(rel="apple-touch-icon", sizes="192x192", href="/images/favicon/apple-icon-precomposed.png")
+
+
+    link(rel="stylesheet", href="/css/styles.css")
+
+    script(src="/js/modernizr/modernizr.js")
+    script(src="/js/jquery/dist/jquery.min.js")
+    script(src="/js/handlebars/handlebars.min.js")
+    script(src="/js/d3/d3.min.js")
+    
+    link(rel="stylesheet", href="/js/social-likes/social-likes_flat.css")
+    script(src="/js/social-likes/social-likes.min.js")
+    
+    
+
+    script(src="/js/scripts.js", defer, async)
+
+  body
+  
+    include ../mixins/header_navigation.jade
+  
+    block content
+    
+    footer
+      p.copyright © 2015 VacayKit.
+        span  All rights reserved.
+      nav.project
+        a.project__link(href="#") Blog
+        a.project__link(href="content.html") About
+        a.project__link.project__link_selected(href="contacts.html") Contact us
+      nav.social
+        a.fb(href="http://www.facebook.com/vacaykit")
+        a.tw(href="http://twitter.com/vacaykit")
+        //- a.gp(href="#")
+        //- a.pi(href="#")
+        a.yt(href="http://www.pinterest.com/vacaykit")
+        
+    .popup.subscribe-form-popup
+      .popup__lightbox
+      form.popup__panel.subscribe-form(action="/", method="post")
+        h2.subscribe-form__title Get my Thailand packing list
+        fieldset.subscribe-form__line
+          input.subscribe-form__input(type="email", name="email", placeholder="Email", required="required")
+          button.subscribe-form__submit(type="submit") Send
+        fieldset.subscribe-form__line.checkbox
+          input#subscribe-form__update.checkbox__input(type="checkbox", name="update")
+          label.checkbox__label(for="subscribe-form__update") Subscribe me to VacayKit monthly update
+        nav
+          a.popup__close(href="#")
+
+    .popup.subscribe-confirmation-popup
+      .popup__lightbox
+      .popup__panel.subscribe-confirmation
+        h2.subscribe-confirmation__title Check your inbox
+        p.subscribe-confirmation__message We've sent The Complete Packing List for Thailand to your Email. Please check Spam folder if you won't have received it in 5 minutes.
+        nav.subscribe-confirmation__socials
+          h3 Help us get famous
+          img(src="/images/social_dummy.png", alt="Заглушка для социальных сетей")
+        nav
+          a.popup__close(href="#")
+
+    script(id="select-template", type="text/x-handlebars-template").
+      <span class="select">
+        <span class="select__current select__current_unchanged">Please select</span>
+        <span class="select__dropdown">
+          {{#each options}}
+          <span tabindex="{{../tab}}" class="select__option" data-value="{{value}}">{{label}}</span>
+          {{/each}}
+        </span>
+      </span>
+        
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-62123734-1', 'auto');
+      ga('send', 'pageview');
