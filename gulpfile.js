@@ -117,8 +117,8 @@ gulp.task('fonts', function() {
 
 gulp.task('html', function() {
   return gulp.src(dirs.source.jade)
-    .pipe(watch(dirs.source.jade))
-    .pipe(watch(dirs.source.partials))
+    // .pipe(watch(dirs.source.jade))
+    // .pipe(watch(dirs.source.partials))
     .pipe(plumber())
     .pipe(jade({pretty: true}))
     .pipe(rename(function (path) {
@@ -142,6 +142,20 @@ gulp.task('css', function() {
   return gulp.src([dirs.source.stylus, dirs.source.css])
     // .pipe(watch([dirs.source.stylus, dirs.source.css]))
     .pipe(plumber())
+    .pipe(gulpif(/[.]styl$/, stylus({compress: false})))
+    .pipe(order(['fonts.css', 'reset.css']))
+    .pipe(concat("styles.css"))
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
+    .pipe(gulp.dest(dirs.build.css));
+});
+
+gulp.task('cssmin', ['css'], function() {
+  return gulp.src([dirs.source.stylus, dirs.source.css])
+    // .pipe(watch([dirs.source.stylus, dirs.source.css]))
+    .pipe(plumber())
     .pipe(gulpif(/[.]styl$/, stylus({compress: true})))
     .pipe(csso())
     .pipe(order(['fonts.css', 'reset.css']))
@@ -150,6 +164,9 @@ gulp.task('css', function() {
       browsers: ['last 2 versions'],
       cascade: false
     }))
+    .pipe(rename(function (path) {
+      path.basename = "styles.min";
+      }))
     .pipe(gulp.dest(dirs.build.css));
 });
 
