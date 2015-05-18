@@ -1374,6 +1374,7 @@ body>header .project__link_mobile {
   }
   html>body>header.landing-bg {
     height: 240px;
+    border-bottom-width: 4px;
   }
   html>body>header.landing-bg .logotype {
     width: 80px;
