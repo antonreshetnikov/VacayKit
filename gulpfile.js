@@ -190,4 +190,4 @@ gulp.task('watch', function () {
 });
 
 gulp.task('watcher', ['html', 'css', 'js']);
-gulp.task('default', ['html', 'css', 'js', 'list', 'images', 'svg']);
+gulp.task('default', ['html', 'css', 'cssmin', 'js', 'list', 'images', 'svg', 'iconfont', 'fonts']);
