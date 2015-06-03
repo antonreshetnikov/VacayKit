@@ -9,6 +9,19 @@
     <meta name="msapplication-TileImage" content="/images/favicon/apple-icon-precomposed.png"/>
     <meta name="msapplication-TileColor" content="#ffffff"/>
     <title>VacayKit</title>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="URL объекта"/>
+    <meta property="og:site_name" content="Название ресурса, на котором расположена статья"/>
+    <meta property="og:image" content="URL изображения для статьи"/>
+    <meta property="og:title" content="VacayKit"/>
+    <meta property="og:description" content="Описание статьи"/>
+    <meta property="article:section" content="Раздел, к которому относится статья"/>
+    <meta property="article:tag" content="Ключевые слова"/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:url" content="URL статьи"/>
+    <meta name="twitter:title" content="Заголовок статьи"/>
+    <meta name="twitter:description" content="Описание статьи"/>
+    <meta name="twitter:image" content="URL изображения для статьи"/>
     <link rel="icon" type="image/svg+xml" href="/images/favicon/vacaykit_favicon.svg"/>
     <link rel="icon" sizes="16x16" type="image/x-icon" href="/images/favicon/favicon.ico"/>
     <link rel="icon" sizes="16x16" type="image/png" href="/images/favicon/favicon-16x16.png"/>
@@ -40,7 +53,7 @@
     <script src="/js/d3/d3.min.js"></script>
     <link rel="stylesheet" href="/js/social-likes/social-likes_flat.css"/>
     <script src="/js/social-likes/social-likes.min.js"></script>
-    <script src="/js/scripts.js" defer="defer" async="async"></script>
+    <script src="/js/scripts.min.js" defer="defer" async="async"></script>
   </head>
   <body>
     <header class="landing-bg">
@@ -71,16 +84,8 @@
       <form action="/show/kit/" method="post" class="landing__selector">
         <label for="kit-selector">I'm travelling to</label>
         <select id="kit-selector" data-select="true">
-          <option value="1">Long Flight</option>
-          <option value="2">Thailand</option>
-          <option value="3">Sri Lanka</option>
-          <option value="4">Ecuador</option>
-          <option value="5">Germany</option>
-          <option value="6">Swiss Confederation</option>
-          <option value="7">Russia</option>
-          <option value="8">Urugvay</option>
-          <option value="9">France</option>
-          <option value="10">Perda de la Villa de la papa de mama</option>
+          <option value="http://vacaykit.com/asia/malaysia/">Malaysia</option>
+          <option value="http://vacaykit.com/asia/sri_lanka/">Sri Lanka</option>
         </select>
         <button type="submit">Get my Packing List</button>
       </form>

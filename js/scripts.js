@@ -823,6 +823,33 @@ $(document).ready(function() {
   return results;
 });
 
+var Selector,
+  bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
+
+Selector = (function() {
+  function Selector() {
+    this.redirect = bind(this.redirect, this);
+    this.form = $('form.landing__selector');
+    if (this.form.length === 0) {
+      return;
+    }
+    this.select = $('#kit-selector');
+    this.form.on('submit', this.redirect);
+  }
+
+  Selector.prototype.redirect = function(event) {
+    event.preventDefault();
+    return document.location = $('#kit-selector').val();
+  };
+
+  return Selector;
+
+})();
+
+$(document).ready(function() {
+  return new Selector;
+});
+
 var Subscribe,
   bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
