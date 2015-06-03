@@ -52,7 +52,8 @@ class Kits
       @menu.css 'max-height', @viewport_height
       @widget.css 'bottom', 'auto'
 
-    @getCurrentKit()
+    window.clearInterval(@tm)
+    @tm = window.setTimeout(@getCurrentKit, 50)
 
   getCurrentKit: =>
     bottom = Math.max($('html').scrollTop(), document.body.scrollTop) + @viewport_height
@@ -65,6 +66,14 @@ class Kits
         last = head.get(0)
       else
         break
+
+    console.log last
+
+    if last != null && typeof @old != 'undefined' && @old != null && @old.className == last.className
+      console.log 'неизменилось!'
+      return
+
+    @old = last
 
     if last != null
       id = last.parentNode.getAttribute 'id'
