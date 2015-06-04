@@ -943,6 +943,30 @@ body > footer .social a:before {
   font-size: 21px;
   color: #fff;
 }
+body > footer .social a.ln {
+  background-color: #007bb6;
+}
+body > footer .social a.ln:before {
+  content: "\e00A";
+}
+body > footer .social a.ln:hover {
+  background-color: #0085c5;
+}
+body > footer .social a.ln:active {
+  background-color: #016696;
+}
+body > footer .social a.in {
+  background-color: #3f729b;
+}
+body > footer .social a.in:before {
+  content: "\e009";
+}
+body > footer .social a.in:hover {
+  background-color: #4c8abc;
+}
+body > footer .social a.in:active {
+  background-color: #1c5380;
+}
 body > footer .social a.fb {
   background-color: #3b5fa6;
 }
@@ -3493,6 +3517,9 @@ html body .social-likes__icon {
 }
 .team__social a.yt:before {
   content: "\e007";
+}
+.team__social a.ln:before {
+  content: "\e00A";
 }
 @media (max-width: 500px) {
   html>body .team {

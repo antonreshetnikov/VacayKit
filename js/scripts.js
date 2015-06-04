@@ -554,7 +554,8 @@ Kits = (function() {
       this.menu.css('max-height', this.viewport_height);
       this.widget.css('bottom', 'auto');
     }
-    return this.getCurrentKit();
+    window.clearInterval(this.tm);
+    return this.tm = window.setTimeout(this.getCurrentKit, 50);
   };
 
   Kits.prototype.getCurrentKit = function() {
@@ -572,6 +573,12 @@ Kits = (function() {
         break;
       }
     }
+    console.log(last);
+    if (last !== null && typeof this.old !== 'undefined' && this.old !== null && this.old.className === last.className) {
+      console.log('неизменилось!');
+      return;
+    }
+    this.old = last;
     if (last !== null) {
       id = last.parentNode.getAttribute('id');
       this.menu.find('.kits__kit_active').removeClass('kits__kit_active');
