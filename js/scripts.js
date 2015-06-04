@@ -573,9 +573,7 @@ Kits = (function() {
         break;
       }
     }
-    console.log(last);
     if (last !== null && typeof this.old !== 'undefined' && this.old !== null && this.old.className === last.className) {
-      console.log('неизменилось!');
       return;
     }
     this.old = last;
@@ -598,12 +596,7 @@ Kits = (function() {
       scroll_left = this.menu.scrollLeft();
       link_left = link.offset().left;
       link_width = link.width();
-      if (link_left < scroll_left || (link_left + link_width) > (scroll_left + menu_width)) {
-        this.menu.scrollTop(0);
-        return this.menu.stop().animate({
-          scrollLeft: parseInt(link_left + link_width / 2 - menu_width / 2, 10) + 'px'
-        }, 'fast');
-      }
+      return $(this.menu).scrollTo(Math.min(Math.max(0, Math.round(link_left + link_width / 2)), this.wrapper.width() - menu_width));
     } else {
       scroll_top = this.menu.scrollTop();
       link_top = link.offset().top - link.parent().offset().top;
