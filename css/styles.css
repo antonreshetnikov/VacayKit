@@ -754,6 +754,30 @@ table {
   margin: 30px auto 76px;
   text-align: center;
 }
+.featured__link {
+  position: relative;
+  width: 322px;
+  height: 242px;
+  display: block;
+  margin: -1px 0 0 0;
+  overflow: hidden;
+  -webkit-transform: translateZ(0) scale(1);
+  transform: translateZ(0) scale(1);
+}
+.featured__link:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 324px;
+  height: 244px;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: url("../svg/mask320x240.svg") 50% 50% no-repeat;
+  background-size: 324px 244px;
+  z-index: 1000;
+}
 .featured__title {
   font-size: 40px;
   line-height: 53px;
@@ -766,19 +790,17 @@ table {
   will-change: transform;
   transition: -webkit-transform 0.5s ease-in-out;
   transition: transform 0.5s ease-in-out;
+  -webkit-transform: scale(1);
+  transform: scale(1);
 }
 .featured__item {
   width: 320px;
   height: 240px;
-  overflow: hidden;
   display: inline-block;
   vertical-align: top;
   margin: 0 20px 40px;
   position: relative;
-  overflow: hidden;
   border-radius: 6px;
-  -webkit-transform: scale(1);
-  transform: scale(1);
 }
 .featured__item:hover .featured__photo,
 .featured__item:focus .featured__photo {
@@ -822,6 +844,16 @@ table {
     width: 280px;
     height: 210px;
   }
+  html>body .featured__link {
+    width: 282px;
+    height: 210px;
+  }
+  html>body .featured__link:after {
+    width: 284px;
+    height: 214px;
+    background: url("../svg/mask280x210.svg") 50% 50% no-repeat;
+    background-size: 284px 214px;
+  }
   html>body .featured__kit-name {
     margin-top: 0;
     font-size: 20px;
@@ -841,6 +873,16 @@ table {
     height: 255px;
     margin: 0 15px 30px;
   }
+  html>body .featured__link {
+    width: 342px;
+    height: 255px;
+  }
+  html>body .featured__link:after {
+    width: 344px;
+    height: 259px;
+    background: url("../svg/mask340x255.svg") 50% 50% no-repeat;
+    background-size: 344px 259px;
+  }
   html>body .featured__kit-name {
     margin-top: -5px;
     font-size: 26px;
@@ -855,6 +897,16 @@ table {
     margin: 0 15px 15px;
     width: 290px;
     height: 218px;
+  }
+  html>body .featured__link {
+    width: 292px;
+    height: 218px;
+  }
+  html>body .featured__link:after {
+    width: 294px;
+    height: 222px;
+    background: url("../svg/mask290x218.svg") 50% 50% no-repeat;
+    background-size: 294px 222px;
   }
   html>body .featured__kit-name {
     margin-top: 0;
