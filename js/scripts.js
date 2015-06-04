@@ -584,30 +584,12 @@ Kits = (function() {
       link.addClass('kits__kit_active');
       menu_width = this.menu.width();
       menu_height = this.menu.height();
-      if ((this.layout === 'mobile' && this.links_width > menu_width) || (this.layout !== 'mobile' && this.links_height > menu_height)) {
-        return this.scroll_menu(link, menu_width, menu_height);
-      }
+      return $(this.menu).scrollTo(link, 200);
     }
   };
 
   Kits.prototype.scroll_menu = function(link, menu_width, menu_height) {
-    var link_height, link_left, link_top, link_width, scroll_left, scroll_top;
-    if (this.layout === 'mobile') {
-      scroll_left = this.menu.scrollLeft();
-      link_left = link.offset().left;
-      link_width = link.width();
-      return $(this.menu).scrollTo(Math.min(Math.max(0, Math.round(link_left + link_width / 2)), this.wrapper.width() - menu_width));
-    } else {
-      scroll_top = this.menu.scrollTop();
-      link_top = link.offset().top - link.parent().offset().top;
-      link_height = link.height();
-      if ((link_top < scroll_top) || (link_top + link_height) > (scroll_top + menu_height)) {
-        this.menu.scrollLeft(0);
-        return this.menu.stop().animate({
-          scrollTop: parseInt(link_top + link_height / 2 - menu_height / 2 + 15, 10) + 'px'
-        }, 'fast');
-      }
-    }
+    return $(this.menu).scrollTo(link, 200);
   };
 
   Kits.prototype.scrollTo = function(event) {
