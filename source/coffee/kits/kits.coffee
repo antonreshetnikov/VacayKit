@@ -52,7 +52,8 @@ class Kits
       @menu.css 'max-height', @viewport_height
       @widget.css 'bottom', 'auto'
 
-    @getCurrentKit()
+    window.clearInterval(@tm)
+    @tm = window.setTimeout(@getCurrentKit, 50)
 
   getCurrentKit: =>
     bottom = Math.max($('html').scrollTop(), document.body.scrollTop) + @viewport_height
@@ -66,6 +67,13 @@ class Kits
       else
         break
 
+    if last != null && typeof @old != 'undefined' && @old != null && @old.className == last.className
+      return
+
+    @old = last
+
+    # console.log 'выбран', last
+
     if last != null
       id = last.parentNode.getAttribute 'id'
       @menu.find('.kits__kit_active').removeClass 'kits__kit_active'
@@ -75,32 +83,44 @@ class Kits
       menu_width = @menu.width()
       menu_height = @menu.height()
 
-      if (@layout == 'mobile' && @links_width > menu_width) || (@layout != 'mobile' && @links_height > menu_height)
-        @scroll_menu link, menu_width, menu_height
+      $(@menu).scrollTo(link, 200)
+
+      # if (@layout == 'mobile' && @links_width > menu_width) || (@layout != 'mobile' && @links_height > menu_height)
+      #   @scroll_menu link, menu_width, menu_height
 
   scroll_menu: (link, menu_width, menu_height)=>
+    $(@menu).scrollTo(link, 200)
 
-    if @layout == 'mobile'
-
-      scroll_left = @menu.scrollLeft()
-      link_left = link.offset().left
-      link_width = link.width()
-      if link_left<scroll_left || (link_left+link_width)>(scroll_left+menu_width)
-        @menu.scrollTop 0
-        @menu.stop().animate(
-            scrollLeft: parseInt(link_left + link_width/2 - menu_width/2, 10) + 'px'
-          , 'fast')
-
-    else
-      scroll_top = @menu.scrollTop()
-      link_top = link.offset().top - link.parent().offset().top
-      link_height = link.height()
-
-      if (link_top < scroll_top) || (link_top+link_height)>(scroll_top+menu_height)
-        @menu.scrollLeft 0
-        @menu.stop().animate(
-            scrollTop: parseInt(link_top + link_height/2 - menu_height/2 + 15, 10) + 'px'
-          , 'fast')
+    # if @layout == 'mobile'
+    #
+    #   scroll_left = @menu.scrollLeft()
+    #   link_left = link.offset().left
+    #   link_width = link.width()
+    #
+    #   # console.log 'pos: ', Math.min(Math.max(0,Math.round(link_left + link_width/2)), @wrapper.width()-menu_width)
+    #   # @menu.scrollLeft(Math.min(Math.max(0,Math.round(link_left + link_width/2)), @wrapper.width()-menu_width))
+    #
+    #   $(@menu).scrollTo(link, 100)
+    #
+    #   # if link_left<scroll_left || (link_left+link_width)>(scroll_left+menu_width)
+    #   #   @menu.scrollTop 0
+    #   # console.log 'scrolling to: ', ((link_left + link_width/2) - (menu_width/2)) + 'px'
+    #   # @menu.scrollLeft((link_left + link_width/2) - (menu_width/2));
+    #   # @menu.stop().animate(
+    #   #     scrollLeft: ((link_left + link_width/2) - (menu_width/2)) + 'px'
+    #   #   , 'fast')
+    #
+    # else
+    #   scroll_top = @menu.scrollTop()
+    #   link_top = link.offset().top - link.parent().offset().top
+    #   link_height = link.height()
+    #   $(@menu).scrollTo(link, 100)
+    #
+    #   # if (link_top < scroll_top) || (link_top+link_height)>(scroll_top+menu_height)
+    #   #   @menu.scrollLeft 0
+    #   #   @menu.stop().animate(
+    #   #       scrollTop: parseInt(link_top + link_height/2 - menu_height/2 + 15, 10) + 'px'
+    #   #     , 'fast')
 
 
   scrollTo: (event)=>

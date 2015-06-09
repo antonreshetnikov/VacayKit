@@ -2,6 +2,24 @@ extends ../partials/layout.jade
 
 block title
   title Thailand | VacayKit
+  
+  
+block fb
+  meta(property="og:type", content="article")
+  meta(property="og:url", content="URL объекта")
+  meta(property="og:site_name", content="Название ресурса, на котором расположена статья")
+  meta(property="og:image", content="URL изображения для статьи")
+  meta(property="og:title", content="VacayKit")
+  meta(property="og:description", content="Описание статьи")
+  meta(property="article:section", content="Раздел, к которому относится статья")
+  meta(property="article:tag", content="Ключевые слова")
+
+block tw
+  meta(name="twitter:card", content="summary")
+  meta(name="twitter:url", content="URL статьи")
+  meta(name="twitter:title", content="Заголовок статьи")
+  meta(name="twitter:description", content="Описание статьи")
+  meta(name="twitter:image", content="URL изображения для статьи")
 
 block content
   header.thailand-bg

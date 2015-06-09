@@ -18,6 +18,7 @@ var gulp = require('gulp')
     , plumber = require('gulp-plumber')
     , watch = require('gulp-watch')
     , rename = require("gulp-rename")
+    , uglify = require("gulp-uglify")
     , dirs = {
       'source': {
         'jade': './source/jade/**/*.jade'
@@ -138,6 +139,17 @@ gulp.task('js', function() {
     .pipe(gulp.dest(dirs.build.js));
 });
 
+gulp.task('jsmin', function() {
+  return gulp.src([dirs.source.coffee, dirs.source.js])
+    // .pipe(watch([dirs.source.coffee, dirs.source.js]))
+    .pipe(plumber())
+    .pipe(gulpif(/[.]coffee$/, coffee({bare: true})))
+    .pipe(order(['currency/currency.js']))
+    .pipe(uglify())
+    .pipe(concat("scripts.min.js"))
+    .pipe(gulp.dest(dirs.build.js));
+});
+
 gulp.task('css', function() {
   return gulp.src([dirs.source.stylus, dirs.source.css])
     // .pipe(watch([dirs.source.stylus, dirs.source.css]))
@@ -184,10 +196,10 @@ gulp.task('deploy', function () {
 
 
 gulp.task('watch', function () {
-  gulp.watch([dirs.source.stylus, dirs.source.css], ['css']);
+  gulp.watch([dirs.source.stylus, dirs.source.css], ['css','cssmin']);
   gulp.watch(dirs.source.jade, ['html']);
-  gulp.watch(dirs.source.coffee, ['js']);
+  gulp.watch(dirs.source.coffee, ['js','jsmin']);
 });
 
 gulp.task('watcher', ['html', 'css', 'js']);
-gulp.task('default', ['html', 'css', 'cssmin', 'js', 'list', 'images', 'svg', 'iconfont', 'fonts']);
+gulp.task('default', ['html', 'css', 'cssmin', 'js', 'jsmin', 'list', 'images', 'svg', 'iconfont', 'fonts']);

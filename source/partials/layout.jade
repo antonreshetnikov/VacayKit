@@ -11,6 +11,10 @@ html(lang="en")
 
     block title
       title VacayKit
+      
+    block fb
+    
+    block tw
 
     link(rel="icon", type="image/svg+xml", href="/images/favicon/vacaykit_favicon.svg")
 
@@ -46,13 +50,14 @@ html(lang="en")
 
     script(src="/js/modernizr/modernizr.js")
     script(src="/js/jquery/dist/jquery.min.js")
+    script(src="/js/jquery.scrollTo/jquery.scrollTo.min.js")
     script(src="/js/handlebars/handlebars.min.js")
     script(src="/js/d3/d3.min.js")
     
     link(rel="stylesheet", href="/js/social-likes/social-likes_flat.css")
     script(src="/js/social-likes/social-likes.min.js")
     
-    script(src="/js/scripts.js", defer, async)
+    script(src="/js/scripts.min.js", defer, async)
 
   body
   
@@ -70,6 +75,8 @@ html(lang="en")
       nav.social
         a.fb(href="http://www.facebook.com/vacaykit")
         a.tw(href="http://twitter.com/vacaykit")
+        a.in(href="http://instagram.com/vacaykit/")
+        a.ln(href="http://www.linkedin.com/company/vacaykit")
         //- a.gp(href="#")
         a.pi(href="http://www.pinterest.com/vacaykit")
         a.yt(href="https://www.youtube.com/users/vacaykit")
