@@ -1,6 +1,6 @@
 mixin header_navigation(selected)
   nav.project
-    a(href="home.html")
+    a(href="/")
       h1.logotype VacayKit
 
     button.hamburger(type="button")
@@ -10,13 +10,13 @@ mixin header_navigation(selected)
     .project__wrapper
       a.project__link.project__link_mobile(href="/", class=(selected == 'Home' ? "project__link_selected" : "")) Home
       .dropdown
-        h2.dropdown__title Popular Kits
+        h2.dropdown__title Popular kits
         .dropdown__panel
           .dropdown__wrapper
             ul.dropdown__body
               li: a(href="/long_flight_kit/", class=(selected == 'Long_flight_kit' ? "project__link_selected" : "")) Long Flight Kit
               li: a(href="/asia/malaysia/", class=(selected == 'Malaysia' ? "project__link_selected" : "")) Malaysia
-      a.project__link(href="/blog", class=(selected == 'Blog' ? "project__link_selected" : "")) Blog
+      a.project__link(href="/stories", class=(selected == 'Blog' ? "project__link_selected" : "")) Travel stories
       a.project__link(href="/about", class=(selected == 'About' ? "project__link_selected" : "")) About
       a.project__link.project__link_mobile(href="/contact", class=(selected == 'Contact us' ? "project__link_selected" : "")) Contact us
     
