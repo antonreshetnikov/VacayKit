@@ -1,0 +1,136 @@
+@import "../helpers/*"
+
+.recommended
+  position relative
+  clear both
+  padding 0 0 0 30px
+  margin 0 0 80px
+  &__title
+    font-size 24px
+    line-height 29px
+    font-weight bold
+    color $grey
+    margin 0 0 39px
+  &__count
+    font-size 14px
+    vertical-align super
+    margin: 0 0 0 5px
+    position relative
+    font-weight normal
+    top -2px
+    color $grey
+    font-weight normal
+  &__list
+    overflow hidden
+    position relative
+    clearit()
+  &__item
+    float left
+    width 25%
+  &__link
+    text-decoration none
+    color $grey
+  &__photo
+    height 180px
+    width 116px
+    margin 0 auto 19px
+    display block
+  &__name
+    font-size 17px
+    line-height 22px
+    text-align center
+    color $grey
+    max-height 44px
+    overflow hidden
+    text-overflow ellipsis
+    position relative
+    margin 0 0 8px
+  &__details
+    text-align center
+  &__votes
+    display inline-block
+    vertical-align middle
+    margin 0 0 0 10px
+    font-size 14px
+    line-height 22px
+    color $transparent-grey-darker
+  &__price
+    margin 8px 0 0
+    text-decoration none
+    line-height 22px
+    display inline-block
+    &_amazon
+      background url('/svg/amazon-small.svg') 100% 8px no-repeat
+      padding 0 75px 0 0
+    &-current
+      font-size 16px
+      font-weight bold
+      color $green-text
+    &-old
+      font-size 14px
+      text-decoration line-through
+      color $semi-grey
+
+@media (max-width: 750px)
+  html body .recommended
+    margin 0 -15px 30px
+    padding 0
+
+    &__title
+      font-size 22px
+      margin 0 0 9px
+      padding 0 15px
+
+    &__list
+      overflow-x auto
+      overflow-y hidden
+
+    &__items
+      margin 0 15px
+      white-space nowrap
+      font-size 0
+      line-height 0
+      height auto
+      display inline-block
+      vertical-align top
+      border 1px solid $border-color-darker
+
+    &__item
+      float none
+      display inline-block
+      vertical-align top
+      margin 0
+      padding 10px
+      height 128px
+      width 253px
+      text-align left
+      position relative
+      border-left 1px solid $border-color-darker
+      white-space normal
+      &:first-child
+        border-left-style none
+    &__photo-wrapper
+      float left
+      width auto
+      height 100px
+      width 74px
+      border 1px solid $border-color-darker
+      margin-right 10px
+      text-align center
+    &__photo
+      width auto
+      height 100px
+      max-width 100%
+    &__price
+      position absolute
+      bottom 5px
+      left 10px
+      right 10px
+      text-align left
+    &__name
+      text-align left
+    &__rating
+      position absolute
+      top 80px
+      left 95px
+      right 10px
