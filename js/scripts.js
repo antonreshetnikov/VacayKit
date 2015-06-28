@@ -493,6 +493,138 @@ $(document).ready(function() {
   return new Hamburger;
 });
 
+var Items,
+  bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
+
+Items = (function() {
+  function Items(widget, index) {
+    this.widget = widget;
+    this.parseBoolean = bind(this.parseBoolean, this);
+    this.toggleState = bind(this.toggleState, this);
+    this.addButtons = bind(this.addButtons, this);
+    this.test = bind(this.test, this);
+    this.minCount = this.widget.attr('data-min') || 5;
+    this.name = this.widget.attr('data-name') || index;
+    this.state = this.parseBoolean(this.widget.attr('data-state')) || true;
+    if (sessionStorage.getItem(this.name)) {
+      this.state = this.parseBoolean(sessionStorage.getItem(this.name));
+    }
+    this.items = this.widget.find('.item');
+    this.count = this.items.length;
+    this.tail = this.widget.find('.item:gt(' + (this.minCount - 1) + ')');
+    this.buttons = null;
+    this.test();
+    $(window).on('resize', this.test);
+  }
+
+  Items.prototype.test = function() {
+    var end, num;
+    if (Modernizr.mq('(max-width: 500px)' && this.buttons !== null)) {
+      this.buttons.remove();
+      this.buttons = null;
+      this.tail.show();
+      return;
+    }
+    if (this.minCount < this.count) {
+      if (this.buttons === null) {
+        this.addButtons();
+      }
+      if (this.state === false) {
+        this.tail.hide();
+        this.buttons.removeClass('items__hide_open');
+        num = this.count - this.minCount;
+        end = '';
+        if (num > 1) {
+          end = 's';
+        }
+        return $(this.buttons).text('Show ' + num + ' item' + end);
+      } else {
+        this.tail.show();
+        this.buttons.addClass('items__hide_open');
+        num = this.count - this.minCount;
+        end = '';
+        if (num > 1) {
+          end = 's';
+        }
+        return $(this.buttons).text('Hide ' + num + ' item' + end);
+      }
+    }
+  };
+
+  Items.prototype.addButtons = function() {
+    var button_1, button_2, end, num;
+    button_1 = document.createElement('BUTTON');
+    button_1.setAttribute('type', 'button');
+    num = this.count - this.minCount;
+    end = '';
+    if (num > 1) {
+      end = 's';
+    }
+    if (this.state) {
+      button_1.appendChild(document.createTextNode('Hide ' + num + ' item' + end));
+    } else {
+      button_1.appendChild(document.createTextNode('Show ' + num + ' item' + end));
+    }
+    button_1.className = 'items__hide';
+    button_2 = button_1.cloneNode(true);
+    button_2.className = 'items__hide items__hide_last';
+    this.widget.before(button_1);
+    this.widget.after(button_2);
+    this.buttons = this.widget.parent().find('>.items__hide');
+    return this.buttons.on('click', this.toggleState);
+  };
+
+  Items.prototype.toggleState = function(event) {
+    var button, end, num;
+    this.state = !this.state;
+    sessionStorage.setItem(this.name, this.state);
+    num = this.count - this.minCount;
+    end = '';
+    if (num > 1) {
+      end = 's';
+    }
+    if (this.state === false) {
+      this.tail.hide();
+      this.buttons.removeClass('items__hide_open');
+      $(this.buttons).text('Show ' + num + ' item' + end);
+    } else {
+      this.tail.show();
+      this.buttons.addClass('items__hide_open');
+      $(this.buttons).text('Hide ' + num + ' item' + end);
+    }
+    button = $(event.currentTarget);
+    if (button.hasClass('items__hide_last') && (this.state === false)) {
+      return $(window).scrollTo(button.offset().top - Math.max(document.documentElement.clientHeight, window.innerHeight || 0) / 2, 200);
+    }
+  };
+
+  Items.prototype.parseBoolean = function(value) {
+    if (typeof value === "undefined") {
+      return void 0;
+    }
+    if (value === "true") {
+      return true;
+    }
+    return false;
+  };
+
+  return Items;
+
+})();
+
+$(document).ready(function() {
+  var i, j, len, list, ref, results;
+  i = 0;
+  ref = $('.items__list');
+  results = [];
+  for (j = 0, len = ref.length; j < len; j++) {
+    list = ref[j];
+    new Items($(list), i);
+    results.push(i++);
+  }
+  return results;
+});
+
 var Kits,
   bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 

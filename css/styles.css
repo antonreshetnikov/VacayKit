@@ -2090,6 +2090,48 @@ body>header .project__link_mobile {
   margin: 0 -37px 0 0;
   overflow: hidden;
 }
+.items__hide {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  border-style: none;
+  margin: 0;
+  color: #4a4a4a;
+  border: 2px solid #e0e3e6;
+  text-decoration: none;
+  font-weight: normal;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+  font-family: 'Lato', sans-serif;
+  transition: background-color 0.25s, border-color 0.25s;
+  height: 44px;
+  line-height: 40px;
+  padding: 0px 25px 0 50px;
+  font-size: 20px;
+  border-radius: 25px;
+  font-size: 18px;
+  width: 100%;
+  margin: 0 0 5px;
+  background-image: url("../svg/closed.svg");
+  background-position: 24px 50%;
+}
+.items__hide:hover {
+  background-color: #d7dce1;
+  border-color: #d7dce1;
+}
+.items__hide:active {
+  background-color: #bec6ce;
+  border-color: #bec6ce;
+}
+.items__hide_open {
+  background-image: url("../svg/open.svg");
+  background-position: 21px 50%;
+  background-color: #d7dce1;
+  border-color: #d7dce1;
+}
 .items__header {
   height: 180px;
   border-radius: 8px;
@@ -2186,7 +2228,6 @@ body>header .project__link_mobile {
 .items__header_kitesurfing {
   background-color: #487bb4;
   background-image: url("../images/activities/item_kitesurfing.jpg");
-  color: #fff;
   color: #fff;
 }
 .items__title {
