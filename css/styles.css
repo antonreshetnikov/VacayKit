@@ -2100,55 +2100,93 @@ body>header .project__link_mobile {
 }
 .items__header_beach {
   color: #fff;
-  background-color: #ffee58;
-  background-image: url("../images/item_beaching.jpg");
+  background-color: #ffbf32;
+  background-image: url("../images/activities/item_beaching.jpg");
 }
 .items__header_vacination {
   background-color: #90a4ae;
-  background-image: url("../images/item_vaccination.jpg");
+  background-image: url("../images/activities/item_vaccination.jpg");
   color: #fff;
 }
 .items__header_walking {
-  background-color: #ec407a;
-  background-image: url("../images/item_city_walking.jpg");
+  background-color: #703649;
+  background-image: url("../images/activities/item_city_walking.jpg");
   color: #fff;
 }
 .items__header_diving {
-  background-color: #ec407a;
+  background-color: #5fb3f8;
+  background-image: url("../images/activities/item_scuba_diving.jpg");
   color: #fff;
 }
 .items__header_aid {
   background-color: #ff7043;
-  background-image: url("../images/item_first_aid.jpg");
+  background-image: url("../images/activities/item_first_aid.jpg");
   color: #fff;
 }
 .items__header_snorkeling {
   background-color: #29b6f6;
+  background-image: url("../images/activities/item_snorkeling.jpg");
   color: #fff;
 }
 .items__header_whales {
-  background-color: #29b6f6;
+  background-color: #487bb4;
+  background-image: url("../images/activities/item_whale_watching.jpg");
   color: #fff;
 }
 .items__header_trekking {
   background-color: #66bb6a;
+  background-image: url("../images/activities/item_jungle_trekking.jpg");
   color: #fff;
 }
 .items__header_safari {
   background-color: #66bb6a;
+  background-image: url("../images/activities/item_safari.jpg");
   color: #fff;
 }
 .items__header_caving {
   background-color: #8d6e63;
+  background-image: url("../images/activities/item_caving.jpg");
   color: #fff;
 }
 .items__header_surfing {
-  background-color: #26c6da;
-  background-image: url("../images/item_surfing.jpg");
+  background-color: #487bb4;
+  background-image: url("../images/activities/item_surfing.jpg");
   color: #fff;
 }
 .items__header_mountin-hiking {
-  background-color: #26c6da;
+  background-color: #b19c9c;
+  background-image: url("../images/activities/item_mountain_hiking.jpg");
+  color: #fff;
+}
+.items__header_komodo_dragon {
+  background-color: #a5b471;
+  background-image: url("../images/activities/item_komodo_dragon.jpg");
+  color: #fff;
+}
+.items__header_meeting_tribes {
+  background-color: #ee8622;
+  background-image: url("../images/activities/item_meeting_tribes.jpg");
+  color: #fff;
+}
+.items__header_elephant_trekking {
+  background-color: #66bb6a;
+  background-image: url("../images/activities/item_elephant_trekking.jpg");
+  color: #fff;
+}
+.items__header_rafting {
+  background-color: #487bb4;
+  background-image: url("../images/activities/item_rafting.jpg");
+  color: #fff;
+}
+.items__header_cycling {
+  background-color: #66bb6a;
+  background-image: url("../images/activities/item_cycling.jpg");
+  color: #fff;
+}
+.items__header_kitesurfing {
+  background-color: #487bb4;
+  background-image: url("../images/activities/item_kitesurfing.jpg");
+  color: #fff;
   color: #fff;
 }
 .items__title {
@@ -2443,7 +2481,7 @@ body>header .project__link_mobile {
   background-position: 50% 50%;
 }
 .kits__kit_beach:before {
-  background-color: #ffee58;
+  background-color: #ffbf32;
   background-image: url("../svg/icons/on_the_beach.svg");
 }
 .kits__kit_vacination:before {
@@ -2451,11 +2489,11 @@ body>header .project__link_mobile {
   background-image: url("../svg/icons/vaccination.svg");
 }
 .kits__kit_walking:before {
-  background-color: #ec407a;
+  background-color: #703649;
   background-image: url("../svg/icons/city_walking.svg");
 }
 .kits__kit_diving:before {
-  background-color: #ec407a;
+  background-color: #5fb3f8;
   background-image: url("../svg/icons/scuba_diving.svg");
 }
 .kits__kit_aid:before {
@@ -2467,7 +2505,7 @@ body>header .project__link_mobile {
   background-image: url("../svg/icons/snorkeling.svg");
 }
 .kits__kit_whales:before {
-  background-color: #29b6f6;
+  background-color: #2486ec;
   background-image: url("../svg/icons/whale_watching.svg");
 }
 .kits__kit_trekking:before {
@@ -2483,12 +2521,36 @@ body>header .project__link_mobile {
   background-image: url("../svg/icons/caving.svg");
 }
 .kits__kit_surfing:before {
-  background-color: #26c6da;
+  background-color: #487bb4;
   background-image: url("../svg/icons/surfing.svg");
 }
 .kits__kit_mountin-hiking:before {
-  background-color: #26c6da;
+  background-color: #b19c9c;
   background-image: url("../svg/icons/mountain_hiking.svg");
+}
+.kits__kit_komodo_dragon:before {
+  background-color: #a5b471;
+  background-image: url("../svg/icons/komodo_dragon.svg");
+}
+.kits__kit_meeting_tribes:before {
+  background-color: #ee8622;
+  background-image: url("../svg/icons/meeting_tribes.svg");
+}
+.kits__kit_elephant_trekking:before {
+  background-color: #66bb6a;
+  background-image: url("../svg/icons/elephant_trekking.svg");
+}
+.kits__kit_rafting:before {
+  background-color: #487bb4;
+  background-image: url("../svg/icons/rafting.svg");
+}
+.kits__kit_cycling:before {
+  background-color: #66bb6a;
+  background-image: url("../svg/icons/cycling.svg");
+}
+.kits__kit_kitesurfing:before {
+  background-color: #487bb4;
+  background-image: url("../svg/icons/kitesurfing.svg");
 }
 @media (max-width: 1120px) {
   .kits {
@@ -3053,6 +3115,171 @@ html body .page__section-button_open {
     height: 46px;
     right: 0;
     top: 0;
+  }
+}
+
+.recommended {
+  position: relative;
+  clear: both;
+  padding: 0 0 0 30px;
+  margin: 0 0 80px;
+}
+.recommended__title {
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: bold;
+  color: #4a4a4a;
+  margin: 0 0 39px;
+}
+.recommended__count {
+  font-size: 14px;
+  vertical-align: super;
+  margin: 0 0 0 5px;
+  position: relative;
+  font-weight: normal;
+  top: -2px;
+  color: #4a4a4a;
+  font-weight: normal;
+}
+.recommended__list {
+  overflow: hidden;
+  position: relative;
+}
+.recommended__list:after {
+  content: ".";
+  font-size: 0;
+  line-height: 0;
+  height: 0;
+  overflow: hidden;
+  text-indent: -9999px;
+  clear: both;
+  display: block;
+}
+.recommended__item {
+  float: left;
+  width: 25%;
+}
+.recommended__link {
+  text-decoration: none;
+  color: #4a4a4a;
+}
+.recommended__photo {
+  height: 180px;
+  width: 116px;
+  margin: 0 auto 19px;
+  display: block;
+}
+.recommended__name {
+  font-size: 17px;
+  line-height: 22px;
+  text-align: center;
+  color: #4a4a4a;
+  max-height: 44px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+  margin: 0 0 8px;
+}
+.recommended__details {
+  text-align: center;
+}
+.recommended__votes {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0 0 10px;
+  font-size: 14px;
+  line-height: 22px;
+  color: rgba(74,74,74,0.4);
+}
+.recommended__price {
+  margin: 8px 0 0;
+  text-decoration: none;
+  line-height: 22px;
+  display: inline-block;
+}
+.recommended__price_amazon {
+  background: url("/svg/amazon-small.svg") 100% 8px no-repeat;
+  padding: 0 75px 0 0;
+}
+.recommended__price-current {
+  font-size: 16px;
+  font-weight: bold;
+  color: #43a047;
+}
+.recommended__price-old {
+  font-size: 14px;
+  text-decoration: line-through;
+  color: rgba(74,74,74,0.6);
+}
+@media (max-width: 750px) {
+  html body .recommended {
+    margin: 0 -15px 30px;
+    padding: 0;
+  }
+  html body .recommended__title {
+    font-size: 22px;
+    margin: 0 0 9px;
+    padding: 0 15px;
+  }
+  html body .recommended__list {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  html body .recommended__items {
+    margin: 0 15px;
+    white-space: nowrap;
+    font-size: 0;
+    line-height: 0;
+    height: auto;
+    display: inline-block;
+    vertical-align: top;
+    border: 1px solid #e6e8ea;
+  }
+  html body .recommended__item {
+    float: none;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+    padding: 10px;
+    height: 128px;
+    width: 253px;
+    text-align: left;
+    position: relative;
+    border-left: 1px solid #e6e8ea;
+    white-space: normal;
+  }
+  html body .recommended__item:first-child {
+    border-left-style: none;
+  }
+  html body .recommended__photo-wrapper {
+    float: left;
+    width: auto;
+    height: 100px;
+    width: 74px;
+    border: 1px solid #e6e8ea;
+    margin-right: 10px;
+    text-align: center;
+  }
+  html body .recommended__photo {
+    width: auto;
+    height: 100px;
+    max-width: 100%;
+  }
+  html body .recommended__price {
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    right: 10px;
+    text-align: left;
+  }
+  html body .recommended__name {
+    text-align: left;
+  }
+  html body .recommended__rating {
+    position: absolute;
+    top: 80px;
+    left: 95px;
+    right: 10px;
   }
 }
 
