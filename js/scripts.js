@@ -597,7 +597,7 @@ Items = (function() {
     if (button.hasClass('items__hide_last') && (this.state === false)) {
       return window.setTimeout((function(_this) {
         return function() {
-          return $(window).scrollTo(_this.first_button, 200);
+          return $(window).scrollTo(_this.first_button.parent().find('.items__header'), 200);
         };
       })(this), 50);
     }
