@@ -97,7 +97,7 @@ class Items
     button = $ event.currentTarget
     if button.hasClass('items__hide_last') && (@state == false)
       window.setTimeout(()=>
-          $(window).scrollTo(@first_button, 200)
+          $(window).scrollTo(@first_button.parent().find('.items__header'), 200)
         , 50)
 
   parseBoolean: (value)=>
