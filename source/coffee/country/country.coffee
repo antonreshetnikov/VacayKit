@@ -10,7 +10,7 @@ class Country
       @exchange()
 
     if $('.info__capital').length > 0
-      $.get('https://restcountries.eu/rest/v1/alpha?codes='+@country_code).success @countryData
+      $.get('https://restcountries.eu/rest/v1/currency/'+@country_code).success @countryData
 
   countryData: (data)=>
     @widget.find('.info__capital .info__details p').text data[0].capital
