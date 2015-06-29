@@ -23,13 +23,12 @@ class Country
     # @usd_exchange = 'USD_'+@currency
     # @eur_exchange = 'EUR_'+@currency
     $.ajax
-      'url': 'https://apilayer.net/api/live'
+      'url': 'http://apilayer.net/api/live'
       'jsonp': @exchanged
       'dataType': 'jsonp'
       'data':
         'access_key': '3f4a16f6f4fcd244ceed0a9ffb13e738'
-        'source': 'USD'
-        'to': @currency
+        'source': @currency
         'amount': '1'
         'callback': 'window.country.exchanged'
 
