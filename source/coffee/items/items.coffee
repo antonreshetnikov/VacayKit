@@ -1,15 +1,16 @@
 class Items
   constructor: (@widget, index)->
-    @minCount = @widget.attr('data-min') || 5
-    @name = @widget.attr('data-name') || index
 
+    if typeof @widget.attr('data-fold') == "undefined"
+      return
+
+    @name = @widget.attr('data-name') || index
     @state =  @parseBoolean(@widget.attr('data-state')) || true
     if sessionStorage.getItem(@name)
       @state =  @parseBoolean(sessionStorage.getItem(@name))
 
     @items = @widget.find '.item'
     @count = @items.length
-    @tail = @widget.find('.item:gt('+(@minCount-1)+')')
     @buttons = null
 
     @test()
@@ -19,48 +20,45 @@ class Items
     if Modernizr.mq '(max-width: 500px)' && @buttons != null
       @buttons.remove()
       @buttons = null
-      @tail.show()
+      @items.show()
       return
 
-    if @minCount<@count
+    if @buttons == null
+      @addButtons()
 
-      if @buttons == null
-        @addButtons()
+    if @state == false
 
-      if @state == false
+      @items.hide()
+      @last_button.hide()
+      @buttons.removeClass 'items__hide_open'
+      end = ''
+      if @count>1
+        end = 's'
+      $(@buttons).text('Show ' + @count + ' item'+end)
 
-        @tail.hide()
-        @buttons.removeClass 'items__hide_open'
-        num = @count-@minCount
-        end = ''
-        if num>1
-          end = 's'
-        $(@buttons).text('Show ' + num + ' item'+end)
+    else
 
-      else
-
-        @tail.show()
-        @buttons.addClass 'items__hide_open'
-        num = @count-@minCount
-        end = ''
-        if num>1
-          end = 's'
-        $(@buttons).text('Hide ' + num + ' item'+end)
+      @items.show()
+      @last_button.show()
+      @buttons.addClass 'items__hide_open'
+      end = ''
+      if @count>1
+        end = 's'
+      $(@buttons).text('Hide ' + @count + ' item'+end)
 
 
   addButtons: =>
     button_1 = document.createElement 'BUTTON'
     button_1.setAttribute 'type', 'button'
 
-    num = @count-@minCount
     end = ''
-    if num>1
+    if @count>1
       end = 's'
 
     if @state
-      button_1.appendChild document.createTextNode('Hide ' + num + ' item'+end)
+      button_1.appendChild document.createTextNode('Hide ' + @count + ' item'+end)
     else
-      button_1.appendChild document.createTextNode('Show ' + num + ' item'+end)
+      button_1.appendChild document.createTextNode('Show ' + @count + ' item'+end)
 
     button_1.className = 'items__hide'
 
@@ -70,30 +68,37 @@ class Items
     @widget.before button_1
     @widget.after button_2
     @buttons = @widget.parent().find '>.items__hide'
+    @last_button = @widget.next()
+    @first_button = @widget.prev()
     @buttons.on 'click', @toggleState
 
   toggleState: (event)=>
     @state = !@state
     sessionStorage.setItem(@name, @state)
-    num = @count-@minCount
+
     end = ''
-    if num>1
+    if @count>1
       end = 's'
 
     if @state == false
 
-      @tail.hide()
+      @items.hide()
       @buttons.removeClass 'items__hide_open'
-      $(@buttons).text('Show ' + num + ' item'+end)
+      $(@buttons).text('Show ' + @count + ' item'+end)
+      @last_button.hide()
+
     else
 
-      @tail.show()
+      @items.show()
+      @last_button.show()
       @buttons.addClass 'items__hide_open'
-      $(@buttons).text('Hide ' + num + ' item'+end)
+      $(@buttons).text('Hide ' + @count + ' item'+end)
 
     button = $ event.currentTarget
     if button.hasClass('items__hide_last') && (@state == false)
-      $(window).scrollTo(button.offset().top - Math.max(document.documentElement.clientHeight, window.innerHeight || 0)/2, 200)
+      window.setTimeout(()=>
+          $(window).scrollTo(@first_button, 200)
+        , 50)
 
   parseBoolean: (value)=>
     if typeof value == "undefined"
