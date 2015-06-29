@@ -497,12 +497,6 @@ Items = (function() {
 
   Items.prototype.test = function() {
     var end;
-    if (Modernizr.mq('(max-width: 500px)' && this.buttons !== null)) {
-      this.buttons.remove();
-      this.buttons = null;
-      this.items.show();
-      return;
-    }
     if (this.buttons === null) {
       this.addButtons();
     }

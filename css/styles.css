@@ -2111,7 +2111,7 @@ body>header .project__link_mobile {
   border-radius: 25px;
   font-size: 18px;
   width: 100%;
-  margin: 0 0 5px;
+  margin: 0 0 20px;
   background-image: url("../svg/closed.svg");
   background-position: 24px 50%;
 }
