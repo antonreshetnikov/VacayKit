@@ -33,8 +33,6 @@ var Country,
 
 Country = (function() {
   function Country() {
-    this.exchanged = bind(this.exchanged, this);
-    this.exchange = bind(this.exchange, this);
     this.countryData = bind(this.countryData, this);
     var currency_title;
     this.widget = $('.page[data-code]');
@@ -43,36 +41,15 @@ Country = (function() {
       currency_title = window.currency_info[this.country_code].currencyName + ' (' + window.currency_info[this.country_code].currencyId + ')';
       this.currency = window.currency_info[this.country_code].currencyId;
       $('.info__currency-name').text(currency_title);
-      this.exchange();
     }
     if ($('.info__capital').length > 0) {
-      $.get('https://restcountries.eu/rest/v1/alpha?codes=' + this.country_code).success(this.countryData);
+      $.get('https://restcountries.eu/rest/v1/alpha/' + this.country_code).success(this.countryData);
     }
   }
 
   Country.prototype.countryData = function(data) {
-    this.widget.find('.info__capital .info__details p').text(data[0].capital);
+    this.widget.find('.info__capital .info__details p').text(data.capital);
     return $('.info__capital').fadeIn();
-  };
-
-  Country.prototype.exchange = function() {
-    this.usd_exchange = 'USD_' + this.currency;
-    this.eur_exchange = 'EUR_' + this.currency;
-    return $.ajax({
-      'url': 'http://www.freecurrencyconverterapi.com/api/v3/convert',
-      'jsonp': this.exchanged,
-      'dataType': 'jsonp',
-      'data': {
-        'q': 'USD_' + this.currency + ',EUR_' + this.currency,
-        'callback': 'window.country.exchanged'
-      }
-    });
-  };
-
-  Country.prototype.exchanged = function(data) {
-    $('.info__currency-rate_usd').text(data.results[this.usd_exchange].val.toFixed(1) + ' ' + this.currency);
-    $('.info__currency-rate_eur').text(data.results[this.eur_exchange].val.toFixed(1) + ' ' + this.currency);
-    return $('.info__currency').fadeIn();
   };
 
   return Country;

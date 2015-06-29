@@ -1587,9 +1587,6 @@ body>header .project__link_mobile {
   color: #4a4a4a;
   margin: 0 0 10px;
 }
-.info__currency {
-  display: none;
-}
 .info__currency-name {
   display: block;
   white-space: normal;
