@@ -17,12 +17,6 @@ class Items
     $(window).on 'resize', @test
 
   test: =>
-    if Modernizr.mq '(max-width: 500px)' && @buttons != null
-      @buttons.remove()
-      @buttons = null
-      @items.show()
-      return
-
     if @buttons == null
       @addButtons()
 
