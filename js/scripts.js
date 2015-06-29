@@ -503,7 +503,9 @@ Items = (function() {
     this.toggleState = bind(this.toggleState, this);
     this.addButtons = bind(this.addButtons, this);
     this.test = bind(this.test, this);
-    this.minCount = this.widget.attr('data-min') || 5;
+    if (typeof this.widget.attr('data-fold') === "undefined") {
+      return;
+    }
     this.name = this.widget.attr('data-name') || index;
     this.state = this.parseBoolean(this.widget.attr('data-state')) || true;
     if (sessionStorage.getItem(this.name)) {
@@ -511,59 +513,55 @@ Items = (function() {
     }
     this.items = this.widget.find('.item');
     this.count = this.items.length;
-    this.tail = this.widget.find('.item:gt(' + (this.minCount - 1) + ')');
     this.buttons = null;
     this.test();
     $(window).on('resize', this.test);
   }
 
   Items.prototype.test = function() {
-    var end, num;
+    var end;
     if (Modernizr.mq('(max-width: 500px)' && this.buttons !== null)) {
       this.buttons.remove();
       this.buttons = null;
-      this.tail.show();
+      this.items.show();
       return;
     }
-    if (this.minCount < this.count) {
-      if (this.buttons === null) {
-        this.addButtons();
+    if (this.buttons === null) {
+      this.addButtons();
+    }
+    if (this.state === false) {
+      this.items.hide();
+      this.last_button.hide();
+      this.buttons.removeClass('items__hide_open');
+      end = '';
+      if (this.count > 1) {
+        end = 's';
       }
-      if (this.state === false) {
-        this.tail.hide();
-        this.buttons.removeClass('items__hide_open');
-        num = this.count - this.minCount;
-        end = '';
-        if (num > 1) {
-          end = 's';
-        }
-        return $(this.buttons).text('Show ' + num + ' item' + end);
-      } else {
-        this.tail.show();
-        this.buttons.addClass('items__hide_open');
-        num = this.count - this.minCount;
-        end = '';
-        if (num > 1) {
-          end = 's';
-        }
-        return $(this.buttons).text('Hide ' + num + ' item' + end);
+      return $(this.buttons).text('Show ' + this.count + ' item' + end);
+    } else {
+      this.items.show();
+      this.last_button.show();
+      this.buttons.addClass('items__hide_open');
+      end = '';
+      if (this.count > 1) {
+        end = 's';
       }
+      return $(this.buttons).text('Hide ' + this.count + ' item' + end);
     }
   };
 
   Items.prototype.addButtons = function() {
-    var button_1, button_2, end, num;
+    var button_1, button_2, end;
     button_1 = document.createElement('BUTTON');
     button_1.setAttribute('type', 'button');
-    num = this.count - this.minCount;
     end = '';
-    if (num > 1) {
+    if (this.count > 1) {
       end = 's';
     }
     if (this.state) {
-      button_1.appendChild(document.createTextNode('Hide ' + num + ' item' + end));
+      button_1.appendChild(document.createTextNode('Hide ' + this.count + ' item' + end));
     } else {
-      button_1.appendChild(document.createTextNode('Show ' + num + ' item' + end));
+      button_1.appendChild(document.createTextNode('Show ' + this.count + ' item' + end));
     }
     button_1.className = 'items__hide';
     button_2 = button_1.cloneNode(true);
@@ -571,30 +569,37 @@ Items = (function() {
     this.widget.before(button_1);
     this.widget.after(button_2);
     this.buttons = this.widget.parent().find('>.items__hide');
+    this.last_button = this.widget.next();
+    this.first_button = this.widget.prev();
     return this.buttons.on('click', this.toggleState);
   };
 
   Items.prototype.toggleState = function(event) {
-    var button, end, num;
+    var button, end;
     this.state = !this.state;
     sessionStorage.setItem(this.name, this.state);
-    num = this.count - this.minCount;
     end = '';
-    if (num > 1) {
+    if (this.count > 1) {
       end = 's';
     }
     if (this.state === false) {
-      this.tail.hide();
+      this.items.hide();
       this.buttons.removeClass('items__hide_open');
-      $(this.buttons).text('Show ' + num + ' item' + end);
+      $(this.buttons).text('Show ' + this.count + ' item' + end);
+      this.last_button.hide();
     } else {
-      this.tail.show();
+      this.items.show();
+      this.last_button.show();
       this.buttons.addClass('items__hide_open');
-      $(this.buttons).text('Hide ' + num + ' item' + end);
+      $(this.buttons).text('Hide ' + this.count + ' item' + end);
     }
     button = $(event.currentTarget);
     if (button.hasClass('items__hide_last') && (this.state === false)) {
-      return $(window).scrollTo(button.offset().top - Math.max(document.documentElement.clientHeight, window.innerHeight || 0) / 2, 200);
+      return window.setTimeout((function(_this) {
+        return function() {
+          return $(window).scrollTo(_this.first_button, 200);
+        };
+      })(this), 50);
     }
   };
 
