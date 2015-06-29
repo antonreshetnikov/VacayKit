@@ -2132,6 +2132,9 @@ body>header .project__link_mobile {
   background-color: #d7dce1;
   border-color: #d7dce1;
 }
+.items__hide_open.items__hide_last {
+  background-image: url("../svg/closed-2.svg");
+}
 .items__header {
   height: 180px;
   border-radius: 8px;
