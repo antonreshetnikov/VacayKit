@@ -1,13 +1,11 @@
 class Items
-  constructor: (@widget, index)->
+  constructor: (@widget)->
 
     if typeof @widget.attr('data-fold') == "undefined"
       return
 
-    @name = @widget.attr('data-name') || index
-    @state =  @parseBoolean(@widget.attr('data-state')) || true
-    if sessionStorage.getItem(@name)
-      @state =  @parseBoolean(sessionStorage.getItem(@name))
+    @state =  @parseBoolean(@widget.attr('data-open'))
+    console.log @state
 
     @items = @widget.find '.item'
     @count = @items.length
@@ -68,7 +66,6 @@ class Items
 
   toggleState: (event)=>
     @state = !@state
-    sessionStorage.setItem(@name, @state)
 
     end = ''
     if @count>1
@@ -102,7 +99,5 @@ class Items
     return false
 
 $(document).ready ->
-  i = 0
   for list in $ '.items__list'
-    new Items($(list), i)
-    i++
+    new Items($(list))
