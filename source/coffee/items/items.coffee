@@ -4,8 +4,10 @@ class Items
     if typeof @widget.attr('data-fold') == "undefined"
       return
 
-    @state =  @parseBoolean(@widget.attr('data-open'))
-    console.log @state
+    @state =  @parseBoolean @widget.attr('data-open')
+    @name = @widget.attr 'data-name'
+    if typeof @name == "undefined"
+      @name = ""
 
     @items = @widget.find '.item'
     @count = @items.length
@@ -26,7 +28,7 @@ class Items
       end = ''
       if @count>1
         end = 's'
-      $(@buttons).text('Show ' + @count + ' item'+end)
+      $(@buttons).text('Show ' + @count + ' item'+end + " " + @name)
 
     else
 
@@ -36,7 +38,7 @@ class Items
       end = ''
       if @count>1
         end = 's'
-      $(@buttons).text('Hide ' + @count + ' item'+end)
+      $(@buttons).text('Hide ' + @count + ' item'+end + " " + @name)
 
 
   addButtons: =>
@@ -48,9 +50,9 @@ class Items
       end = 's'
 
     if @state
-      button_1.appendChild document.createTextNode('Hide ' + @count + ' item'+end)
+      button_1.appendChild document.createTextNode('Hide ' + @count + ' item'+end + " " + @name)
     else
-      button_1.appendChild document.createTextNode('Show ' + @count + ' item'+end)
+      button_1.appendChild document.createTextNode('Show ' + @count + ' item'+end + " " + @name)
 
     button_1.className = 'items__hide'
 
@@ -75,7 +77,7 @@ class Items
 
       @items.hide()
       @buttons.removeClass 'items__hide_open'
-      $(@buttons).text('Show ' + @count + ' item'+end)
+      $(@buttons).text('Show ' + @count + ' item'+end + " " + @name)
       @last_button.hide()
 
     else
@@ -83,7 +85,7 @@ class Items
       @items.show()
       @last_button.show()
       @buttons.addClass 'items__hide_open'
-      $(@buttons).text('Hide ' + @count + ' item'+end)
+      $(@buttons).text('Hide ' + @count + ' item'+end + " " + @name)
 
     button = $ event.currentTarget
     if button.hasClass('items__hide_last') && (@state == false)
