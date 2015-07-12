@@ -805,7 +805,7 @@ table {
 .featured {
   font-size: 0;
   max-width: 1080px;
-  margin: 30px auto 76px;
+  margin: 30px auto 112px;
   text-align: center;
 }
 .featured__link {
@@ -916,7 +916,7 @@ table {
 }
 @media (max-width: 768px) {
   html>body .featured {
-    margin: 20px auto 86px;
+    margin: 20px auto 160px;
   }
   html>body .featured__title {
     font-size: 22px;
@@ -945,7 +945,7 @@ table {
 }
 @media (max-width: 500px) {
   html>body .featured {
-    margin: 20px auto 86px;
+    margin: 20px auto 160px;
   }
   html>body .featured__item {
     margin: 0 15px 15px;
@@ -2280,8 +2280,23 @@ body>header .project__link_mobile {
   color: #fff;
 }
 .items__header_kitesurfing {
-  background-color: #487bb4;
+  background-color: #069;
   background-image: url("../images/activities/item_kitesurfing.jpg");
+  color: #fff;
+}
+.items__header_temples {
+  background-color: #a62fd5;
+  background-image: url("../images/activities/item_temples.jpg");
+  color: #fff;
+}
+.items__header_motobiking {
+  background-color: #aa802b;
+  background-image: url("../images/activities/item_motobiking.jpg");
+  color: #fff;
+}
+.items__header_gibbons {
+  background-color: #aa802b;
+  background-image: url("../images/activities/item_gibbons.jpg");
   color: #fff;
 }
 .items__title {
@@ -2644,8 +2659,20 @@ body>header .project__link_mobile {
   background-image: url("../svg/icons/cycling.svg");
 }
 .kits__kit_kitesurfing:before {
-  background-color: #487bb4;
+  background-color: #069;
   background-image: url("../svg/icons/kitesurfing.svg");
+}
+.kits__kit_temples:before {
+  background-color: #a62fd5;
+  background-image: url("../svg/icons/temples.svg");
+}
+.kits__kit_motobiking:before {
+  background-color: #aa802b;
+  background-image: url("../svg/icons/motobiking.svg");
+}
+.kits__kit_gibbons:before {
+  background-color: #aa802b;
+  background-image: url("../svg/icons/gibbons.svg");
 }
 @media (max-width: 1120px) {
   .kits {
@@ -3111,7 +3138,7 @@ html body .page__section-button_open {
 @media (max-width: 1024px) {
   html>body .page {
     max-width: 920px;
-    padding: 30px 0 56px;
+    padding: 30px 0 112px;
     margin: 0 auto;
     border-radius: 0;
   }
@@ -3124,7 +3151,7 @@ html body .page__section-button_open {
 }
 @media (max-width: 940px) {
   html>body .page {
-    padding: 30px 0 56px;
+    padding: 30px 0 158px;
     max-width: initial;
     margin: 0 15px;
   }
@@ -3149,7 +3176,7 @@ html body .page__section-button_open {
 }
 @media (max-width: 500px) {
   html>body .page {
-    padding: 30px 0 86px;
+    padding: 30px 0 158px;
   }
 }
 
