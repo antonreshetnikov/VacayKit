@@ -310,6 +310,25 @@ table {
   }
 }
 
+.body-disclaimer {
+  font-size: 14px;
+  line-height: 17px;
+  color: #535353;
+  margin: 0 0 30px 30px;
+}
+@media (max-width: 740px) {
+  .body-disclaimer {
+    font-size: 11px;
+    line-height: 13px;
+    margin: 0 0 30px;
+  }
+}
+@media (max-width: 1024px) {
+  html body .body-disclaimer {
+    margin: 0 0 30px;
+  }
+}
+
 .brief {
   position: relative;
   float: left;
@@ -585,6 +604,41 @@ table {
   html>body .contacts__form textarea {
     width: 100%;
     margin: 0 0 10px;
+  }
+}
+
+.disclaimer {
+  position: absolute;
+  bottom: 56px;
+  right: 0;
+  left: 0;
+  height: 34px;
+  background-color: #ced4da;
+  padding: 11px 50px 11px 70px;
+  line-height: 34px;
+  z-index: 20;
+}
+.disclaimer__wrapper {
+  font-size: 14px;
+  line-height: 17px;
+  display: inline-block;
+  vertical-align: middle;
+}
+@media (max-width: 900px) {
+  .disclaimer {
+    padding: 11px 50px;
+  }
+}
+@media (max-width: 740px) {
+  .disclaimer {
+    padding: 10px;
+    bottom: 86px;
+    height: 52px;
+    line-height: 52px;
+  }
+  .disclaimer__wrapper {
+    font-size: 11px;
+    line-height: 13px;
   }
 }
 
@@ -2138,7 +2192,7 @@ body>header .project__link_mobile {
   background-color: #ffee58;
   position: relative;
   margin: 0 0 30px;
-  background-size: cover;
+  background-size: auto 100%;
 }
 .items__header_beach {
   color: #fff;
@@ -2893,7 +2947,7 @@ html body .page {
   margin: -16px auto 0;
   background: #fff;
   border-radius: 20px 20px 0 0;
-  padding: 16px 0 56px;
+  padding: 16px 0 112px;
   min-height: 200px;
   background-color: #fff;
 }
@@ -3252,6 +3306,11 @@ html body .page__section-button_open {
   text-decoration: line-through;
   color: rgba(74,74,74,0.6);
 }
+@media (max-width: 1024px) {
+  html body .recommended {
+    padding-left: 0;
+  }
+}
 @media (max-width: 750px) {
   html body .recommended {
     margin: 0 -15px 30px;
@@ -3438,6 +3497,9 @@ html body .social-likes.social-likes_vertical .social-likes__widget {
   min-width: initial;
   margin: 0 0 2px;
 }
+html body .social-likes_alone {
+  margin: 0 0 30px 30px;
+}
 html body .social-likes_mobile {
   display: none;
 }
@@ -3475,6 +3537,11 @@ html body .social-likes__icon {
   left: 8px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+@media (max-width: 1024px) {
+  html body .social-likes {
+    margin: 0 0 30px;
+  }
 }
 @media (max-width: 940px) {
   html>body .social-likes {

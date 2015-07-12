@@ -474,7 +474,7 @@ var Items,
   bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
 Items = (function() {
-  function Items(widget, index) {
+  function Items(widget) {
     this.widget = widget;
     this.parseBoolean = bind(this.parseBoolean, this);
     this.toggleState = bind(this.toggleState, this);
@@ -483,10 +483,10 @@ Items = (function() {
     if (typeof this.widget.attr('data-fold') === "undefined") {
       return;
     }
-    this.name = this.widget.attr('data-name') || index;
-    this.state = this.parseBoolean(this.widget.attr('data-state')) || true;
-    if (sessionStorage.getItem(this.name)) {
-      this.state = this.parseBoolean(sessionStorage.getItem(this.name));
+    this.state = this.parseBoolean(this.widget.attr('data-open'));
+    this.name = this.widget.attr('data-name');
+    if (typeof this.name === "undefined") {
+      this.name = "";
     }
     this.items = this.widget.find('.item');
     this.count = this.items.length;
@@ -508,7 +508,7 @@ Items = (function() {
       if (this.count > 1) {
         end = 's';
       }
-      return $(this.buttons).text('Show ' + this.count + ' item' + end);
+      return $(this.buttons).text('Show ' + this.count + ' item' + end + " " + this.name);
     } else {
       this.items.show();
       this.last_button.show();
@@ -517,7 +517,7 @@ Items = (function() {
       if (this.count > 1) {
         end = 's';
       }
-      return $(this.buttons).text('Hide ' + this.count + ' item' + end);
+      return $(this.buttons).text('Hide ' + this.count + ' item' + end + " " + this.name);
     }
   };
 
@@ -530,9 +530,9 @@ Items = (function() {
       end = 's';
     }
     if (this.state) {
-      button_1.appendChild(document.createTextNode('Hide ' + this.count + ' item' + end));
+      button_1.appendChild(document.createTextNode('Hide ' + this.count + ' item' + end + " " + this.name));
     } else {
-      button_1.appendChild(document.createTextNode('Show ' + this.count + ' item' + end));
+      button_1.appendChild(document.createTextNode('Show ' + this.count + ' item' + end + " " + this.name));
     }
     button_1.className = 'items__hide';
     button_2 = button_1.cloneNode(true);
@@ -548,7 +548,6 @@ Items = (function() {
   Items.prototype.toggleState = function(event) {
     var button, end;
     this.state = !this.state;
-    sessionStorage.setItem(this.name, this.state);
     end = '';
     if (this.count > 1) {
       end = 's';
@@ -556,13 +555,13 @@ Items = (function() {
     if (this.state === false) {
       this.items.hide();
       this.buttons.removeClass('items__hide_open');
-      $(this.buttons).text('Show ' + this.count + ' item' + end);
+      $(this.buttons).text('Show ' + this.count + ' item' + end + " " + this.name);
       this.last_button.hide();
     } else {
       this.items.show();
       this.last_button.show();
       this.buttons.addClass('items__hide_open');
-      $(this.buttons).text('Hide ' + this.count + ' item' + end);
+      $(this.buttons).text('Hide ' + this.count + ' item' + end + " " + this.name);
     }
     button = $(event.currentTarget);
     if (button.hasClass('items__hide_last') && (this.state === false)) {
@@ -589,14 +588,12 @@ Items = (function() {
 })();
 
 $(document).ready(function() {
-  var i, j, len, list, ref, results;
-  i = 0;
+  var i, len, list, ref, results;
   ref = $('.items__list');
   results = [];
-  for (j = 0, len = ref.length; j < len; j++) {
-    list = ref[j];
-    new Items($(list), i);
-    results.push(i++);
+  for (i = 0, len = ref.length; i < len; i++) {
+    list = ref[i];
+    results.push(new Items($(list)));
   }
   return results;
 });
@@ -618,6 +615,7 @@ Kits = (function() {
     this.menu = this.widget.find('.kits__menu');
     this.buttons = this.menu.find('a');
     this.footer = $('body>footer');
+    this.disclaimer = $('.disclaimer');
     this.heads = $('.items__header');
     this.head_height = $(this.heads.get(0)).height();
     this.wrapper = this.menu.find('.kits__wrapper');
@@ -653,7 +651,7 @@ Kits = (function() {
     if (top >= this.menu_top) {
       this.widget.toggleClass('kits_stick', true);
       if (this.layout === 'desktop' || this.layout === 'tablet') {
-        visible_footer = Math.max((top + this.viewport_height) - this.footer.offset().top, 0);
+        visible_footer = Math.max((top + this.viewport_height) - this.disclaimer.offset().top, 0);
         this.menu.css('max-height', this.viewport_height - visible_footer - 47);
         this.widget.css('bottom', visible_footer + 'px');
       }
