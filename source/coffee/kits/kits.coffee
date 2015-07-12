@@ -7,6 +7,7 @@ class Kits
     @menu = @widget.find '.kits__menu'
     @buttons = @menu.find 'a'
     @footer = $ 'body>footer'
+    @disclaimer = $ '.disclaimer'
     @heads = $ '.items__header'
     @head_height = $(@heads.get(0)).height()
     @wrapper = @menu.find '.kits__wrapper'
@@ -44,7 +45,7 @@ class Kits
     if top >= @menu_top
       @widget.toggleClass 'kits_stick', true
       if @layout is 'desktop' || @layout is 'tablet'
-        visible_footer = Math.max((top + @viewport_height) - @footer.offset().top, 0)
+        visible_footer = Math.max((top + @viewport_height) - @disclaimer.offset().top, 0)
         @menu.css 'max-height', @viewport_height - visible_footer - 47
         @widget.css 'bottom', visible_footer + 'px'
     else
