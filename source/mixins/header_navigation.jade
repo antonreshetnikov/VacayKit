@@ -1,7 +1,7 @@
 mixin header_navigation(selected)
   nav.project
     a(href="/")
-      h1.logotype VacayKit
+      div.logotype VacayKit
 
     button.hamburger(type="button")
       span.hamburger__line.hamburger__line_top
@@ -10,13 +10,20 @@ mixin header_navigation(selected)
     .project__wrapper
       a.project__link.project__link_mobile(href="/", class=(selected == 'Home' ? "project__link_selected" : "")) Home
       .dropdown
-        h2.dropdown__title Popular kits
+        div.dropdown__title Popular lists
         .dropdown__panel
           .dropdown__wrapper
             ul.dropdown__body
-              li: a(href="/long_flight_kit/", class=(selected == 'Long_flight_kit' ? "project__link_selected" : "")) Long Flight Kit
-              li: a(href="/asia/malaysia/", class=(selected == 'Malaysia' ? "project__link_selected" : "")) Malaysia
-      a.project__link(href="/stories", class=(selected == 'Blog' ? "project__link_selected" : "")) Travel stories
+              li: a(href="/asia/malaysia/", class=(selected == 'Malaysia' ? "project__link_selected" : "")) Malaysia packing list
+              li: a(href="/asia/sri_lanka/", class=(selected == 'Sri_Lanka' ? "project__link_selected" : "")) Sri Lanka packing list
+              li: a(href="/asia/indonesia/", class=(selected == 'Indonesia' ? "project__link_selected" : "")) Indonesia packing list
+              li: a(href="/asia/thailand/", class=(selected == 'Thailand' ? "project__link_selected" : "")) Thailand packing list
+              li: a(href="/asia/philippines/", class=(selected == 'Philippines' ? "project__link_selected" : "")) Philippines packing list
+              li: a(href="/asia/indonesia/", class=(selected == 'Cambodia' ? "project__link_selected" : "")) Cambodia packing list
+              li: a(href="/asia/vietnam/", class=(selected == 'Vietnam' ? "project__link_selected" : "")) Vietnam packing list
+              li: a(href="/asia/laos/", class=(selected == 'Laos' ? "project__link_selected" : "")) Laos packing list
+              li: a(href="/long_flight_kit/", class=(selected == 'Long_flight_kit' ? "project__link_selected" : "")) Long Flight Kit              
+      a.project__link(href="/stories", class=(selected == 'Blog' ? "project__link_selected" : "")) Travel blog
       a.project__link(href="/about", class=(selected == 'About' ? "project__link_selected" : "")) About
       a.project__link.project__link_mobile(href="/contact", class=(selected == 'Contact us' ? "project__link_selected" : "")) Contact us
     
