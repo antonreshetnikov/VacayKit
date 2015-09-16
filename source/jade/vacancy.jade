@@ -1,807 +1,809 @@
 extends ../partials/layout.jade
 
 block title
-  title Thailand | VacayKit
-  
-  
+    title Thailand | VacayKit
+
+
 block fb
-  meta(property="og:type", content="article")
-  meta(property="og:url", content="URL объекта")
-  meta(property="og:site_name", content="Название ресурса, на котором расположена статья")
-  meta(property="og:image", content="URL изображения для статьи")
-  meta(property="og:title", content="VacayKit")
-  meta(property="og:description", content="Описание статьи")
-  meta(property="article:section", content="Раздел, к которому относится статья")
-  meta(property="article:tag", content="Ключевые слова")
+    meta(property="og:type", content="article")
+    meta(property="og:url", content="URL объекта")
+    meta(property="og:site_name", content="Название ресурса, на котором расположена статья")
+    meta(property="og:image", content="URL изображения для статьи")
+    meta(property="og:title", content="VacayKit")
+    meta(property="og:description", content="Описание статьи")
+    meta(property="article:section", content="Раздел, к которому относится статья")
+    meta(property="article:tag", content="Ключевые слова")
 
 block tw
-  meta(name="twitter:card", content="summary")
-  meta(name="twitter:url", content="URL статьи")
-  meta(name="twitter:title", content="Заголовок статьи")
-  meta(name="twitter:description", content="Описание статьи")
-  meta(name="twitter:image", content="URL изображения для статьи")
+    meta(name="twitter:card", content="summary")
+    meta(name="twitter:url", content="URL статьи")
+    meta(name="twitter:title", content="Заголовок статьи")
+    meta(name="twitter:description", content="Описание статьи")
+    meta(name="twitter:image", content="URL изображения для статьи")
 
 block content
-  header.thailand-bg
-  
-    +header_navigation
-
-    .wrapper
-      div.kit.kit_thailand
-        span.kit__region Asia
-        h1.kit__country Thailand
-        span.kit__count 8 kits
-
-      button.subscribe(type="button") Get my Packing List
-
-  section.page(data-code="RU")
-    .page__sections
-      button.page__section-button.page__section-button_open(type="button") General Info
-      section.page__section.page__section_open
-
-        aside.info
-
-          section.info__capital
-            h2.info__title Capital city
-            .info__details
-              p Bangkok
-
-          section.info__currency
-            h2.info__title Local currency
-            .info__details
-              p.info__currency-name Batt (THB)
-              p.info__currency-rates
-                strong.info__currency-rate.info__currency-rate_usd 32 THB
-                strong.info__currency-rate.info__currency-rate_eur 37 THB
-
-        section.brief
-
-          p Known as one of the most popular holiday destinations on earth, Thailand has so much to offer travellers that it’s hard to know where to begin. From the golden sandy beaches to the rolling mountains of the North, antique shopping and dining like a king - Thailand has it all.
-
-          p The south of Thailand has some of the most beautiful beaches and resorts in the world, and going underwater you can find colourful reefs and exotic sea creatures. Bangkok is an Asian metropolis like no other, packed with shopping and fine dining at a fraction of western prices, while the North of Thailand offers culture, a chance to visit remote hill tribes, elephant sanctuaries and treks to hidden waterfalls.
-
-          p What ever you are looking for in a summer holiday, you can find it in Thailand!
-          
-          .social-likes.social-likes_both
-            .facebook(title="Share link on Facebook") Share
-            .twitter(title="Share link on Twitter",  data-via="vacaykit") Tweet
-            .pinterest(title="Share image on Pinterest", data-media="images/header_bg_5.jpg") Pin
-      
-    
-      button.page__section-button.page__section-button_visible(type="button") Best time to visit
-      section.page__section
-        .best
-          .best__abstract
-            p The cool season is the best time to come to Thailand: as well as having more manageable temperatures and less rain, it offers waterfalls in full spate and the best of the upland flowers in bloom. Bear in mind, however, that it’s also the busiest season, so forward planning is essential.
-
-          .best__stats
-            .best__stat
-              h3.best__stat-title Cool Season
-              p.best__month November — February
-              p.best__dataset
-                span.best__label Average temperature
-                data.best__data 22–33 °C
-              p.best__dataset
-                span.best__label Average number of rainy days
-                data.best__data 1–5
-
-            .best__stat
-              h3.best__stat-title Hot Season
-              p.best__month November — February
-              p.best__dataset
-                span.best__label Average temperature
-                data.best__data 22–33 °C
-              p.best__dataset
-                span.best__label Average number of rainy days
-                data.best__data 1–5
-
-            .best__stat
-              h3.best__stat-title Rainy Season
-              p.best__month November — February
-              p.best__dataset
-                span.best__label Average temperature
-                data.best__data 22–33 °C
-              p.best__dataset
-                span.best__label Average number of rainy days
-                data.best__data 1–5
-
-
-          .best__graphs
-            section.best__graph(data-type="temperature", data-max="[78,82,86,88,92,92,88,88,86,84,84,84]", data-min="[70,72,72,74,75,79,75,73,71,68,66,62]",
-            data-format="F")
-              header.best__graph-header
-                h2.best__graph-title Average temperature
-                nav.switcher
-                  button.switcher__selected(type="button", data-filter="F") °F
-                  button(type="button", data-filter="C") °C
-              svg.best__graph-container
-                
-
-
-            section.best__graph(data-type="precipitation", data-values="[1,2,3,4,13,22,13,11,20,18,5,2]")
-              h2.best__graph-title Average number of rainy days
-              svg.best__graph-container
-              
-      button.page__subscribe(type="button") Get the Packing List
-    
-    .social-likes.social-likes_both.social-likes_alone
-      .facebook(title="Share link on Facebook") Share
-      .twitter(title="Share link on Twitter",  data-via="vacaykit") Tweet
-      .pinterest(title="Share image on Pinterest", data-media="images/header_bg_5.jpg") Pin
-    
-    p.body-disclaimer The following links are affiliate links to Amazon.com or other local Amazon web stores - it depends on your location. The listed prices of all items are the US Amazon store prices at the time of publishing. If you are visiting us from outside the USA and there is an analogous item in your local Amazon web store, you'll be redirected there automatically. We do our best to keep all prices and descriptions up to date, but if you find any errors or inaccuracies, don't hesitate to contact us using our feedback page!
-    
-    .recommended
-      h2.recommended__title 
-        | Recommended Travel Guides
-        span.recommended__count 4
-        
-      .recommended__list
-        .recommended__items
-          
-          .recommended__item
-            a.recommended__link(href="#")
-              .recommended__photo-wrapper
-                img.recommended__photo(src="/images/cover-1.jpg", alt="Обложка")
-              h3.recommended__name Lonely Planet Thailand (Travel Guide)
-              .recommended__details
-                .recommended__rating
-                  .stars
-                    .stars__current(style="width: 100%;", data-value="100")
-                  .recommended__votes 23 reviews
-                .recommended__price.recommended__price_amazon
-                  strong.recommended__price-current $14.57
-                
-          .recommended__item
-            a.recommended__link(href="#")
-              .recommended__photo-wrapper
-                img.recommended__photo(src="/images/cover-2.jpg", alt="Обложка")
-              h3.recommended__name Thailand: For Tourists - The Traveler's Guide to Make …
-              .recommended__details
-                .recommended__rating
-                  .stars
-                    .stars__current(style="width: 80%;", data-value="80")
-                  .recommended__votes 121 reviews
-                .recommended__price.recommended__price_amazon
-                  strong.recommended__price-current $14.57
-                  del.recommended__price-old $157.12
-                
-          .recommended__item
-            a.recommended__link(href="#")
-              .recommended__photo-wrapper
-                img.recommended__photo(src="/images/cover-3.jpg", alt="Обложка")
-              h3.recommended__name DK Eyewitness Travel Guide: Thailand
-              .recommended__details
-                .recommended__rating
-                  .stars
-                    .stars__current(style="width: 80%;", data-value="80")
-                  .recommended__votes 2914 reviews
-                .recommended__price.recommended__price_amazon
-                  strong.recommended__price-current $16.00
-                
-          .recommended__item
-            a.recommended__link(href="#")
-              .recommended__photo-wrapper
-                img.recommended__photo(src="/images/cover-4.jpg", alt="Обложка")
-              h3.recommended__name Lonely Planet Discover Thailand (Travel Guide)
-              .recommended__details
-                .recommended__rating
-                  .stars
-                    .stars__current(style="width: 40%;", data-value="40")
-                  .recommended__votes 390 reviews
-                .recommended__price.recommended__price_amazon
-                  strong.recommended__price-current $32.0
-                
-            
-    .kits
-      .kits__available
-        | Available kits
-        span.kits__count 8
-      input(type="checkbox", checked="checked", id="kits__trigger-input", class="kits__trigger-input")
-      label.kits__trigger(for="kits__trigger-input")
-      nav.kits__menu
-        .kits__wrapper
-          a.kits__kit.kits__kit_beach.kits__kit_active.kits__kit_warnig(href="#kit1")
-            h3.kits__kit-title On the Beach in the send fish
-            p.kits__kit-elements 6 items
-          a.kits__kit.kits__kit_vacination.kits__kit_warnig(href="#kit2")
-            h3.kits__kit-title Vaccination
-            p.kits__kit-elements 7 items
-          a.kits__kit.kits__kit_walking(href="#kit3")
-            h3.kits__kit-title City Walking
-            p.kits__kit-elements 12 items
-          a.kits__kit.kits__kit_aid.kits__kit_warnig(href="#kit4")
-            h3.kits__kit-title First Aid
-            p.kits__kit-elements 12 items
-          a.kits__kit.kits__kit_snorkeling(href="#kit5")
-            h3.kits__kit-title Snorkeling
-            p.kits__kit-elements 5 items
-          a.kits__kit.kits__kit_trekking(href="#kit6")
-            h3.kits__kit-title Jungle Trekking
-            p.kits__kit-elements 12 items
-          a.kits__kit.kits__kit_caving(href="#kit7")
-            h3.kits__kit-title Caving
-            p.kits__kit-elements 14 items
-          a.kits__kit.kits__kit_surfing(href="#kit8")
-            h3.kits__kit-title Surfing
-            p.kits__kit-elements 4 items
-          a.kits__kit.kits__kit_diving(href="#kit9")
-            h3.kits__kit-title Scuba Diving
-            p.kits__kit-elements 2 items
-          a.kits__kit.kits__kit_safari(href="#kit10")
-            h3.kits__kit-title Safari
-            p.kits__kit-elements 23 items
-          a.kits__kit.kits__kit_whales(href="#kit11")
-            h3.kits__kit-title Whale watching
-            p.kits__kit-elements 6 items
-          a.kits__kit.kits__kit_mountin-hiking(href="#kit12")
-            h3.kits__kit-title Mount Hiking
-            p.kits__kit-elements 5 items
-
-    .items__wrapper
-      section.items(id="kit1")
-        .items__header.items__header_beach
-          h2.items__title
-            | Beach
-            span.items__count 6 items
-
-        .items__abstract
-          p Ditch the usual tourist traps and vacation like a native—on foot! With 50 adventures to choose from in each deck, just pick a card from the deck and be on your way.
-          p Whether you're a first time visitor to the city, or just want to discover new terrain, City Walks gives you an intimate view.
-        
-        ol.items__list(data-open="true", data-name="for beaching", data-fold=true)
-
-          li.item
-            h3.item__title High sun protection body
-            .item__abstract
-              p Everyone needs sunscreen to protect their skin from damaging UV rays from the sun and sunburn. Using sunscreen products decreases the chances for sunburn and can prevent skin cancer or malignant melanoma.
-
-            .item__elements-wrapper
-              .item__elements
-                
-                a.item__element(href="#")
-                  .item__photo
-                    img(src="/images/item-1.jpg", alt="Фотография")
-                  .item__details
-                    .item__info Avene Thermal Spring water spray 300 ml, 10.5 -Ounce Package
-                    .item__rating
-                      .stars
-                        .stars__current(style="width: 50%;", data-value="50")
-                      .item__votes 101 reviews
-                  .item__price.item__price_amazon
-                    strong.item__price-current $14.57
-                    del.item__price-old $157.12
-
-
-          li.item
-            h3.item__title High sun protection face
-            .item__elements-wrapper
-              .item__elements
-                
-                a.item__element(href="#")
-                  .item__photo
-                    img(src="/images/item-1.jpg", alt="Фотография")
-                  .item__details
-                    .item__info Avene Thermal Spring water spray 300 ml, 10.5 -Ounce Package
-                    .item__rating
-                      .stars
-                        .stars__current(style="width: 80%;", data-value="80")
-                      .item__votes 101 reviews
-                  .item__price.item__price_amazon
-                    strong.item__price-current $123.57
-
-                a.item__element(href="#")
-                  .item__photo
-                    img(src="/images/item-2.jpg", alt="Фотография")
-                  .item__details
-                    .item__info Avene Thermal Spring Water 3 To Go Kit, 5.28 oz
-                    .item__rating
-                      .stars
-                        .stars__current(style="width: 100%;", data-value="100")
-                      .item__votes 390 reviews
-                  .item__price.item__price_amazon
-                    strong.item__price-current $14.57
-                    del.item__price-old $157.12
-
-          li.item.item_important
-            h3.item__title Sun oil
-            .item__abstract
-              p Indication Dermatological care
-            .item__elements-wrapper
-              .item__elements
-                a.item__element(href="#")
-                  .item__photo
-                    img(src="/images/item-3.jpg", alt="Фотография")
-                  .item__details
-                    .item__info Avene Thermal Spring water spray 300 ml, 10.5 -Ounce Package
-                    .item__rating
-                      .stars
-                        .stars__current(style="width: 100%;", data-value="100")
-                      .item__votes 390 reviews
-                  .item__price.item__price_amazon
-                    strong.item__price-current $14.57
-                    del.item__price-old $157.12
-
-          li.item.item_important
-            h3.item__title Sun oil
-            .item__abstract
-              p Indication Dermatological care
-            .item__elements-wrapper
-              .item__elements
-                a.item__element(href="#")
-                  .item__photo
-                    img(src="/images/item-3.jpg", alt="Фотография")
-                  .item__details
-                    .item__info Avene Thermal Spring water spray 300 ml, 10.5 -Ounce Package
-                    .item__rating
-                      .stars
-                        .stars__current(style="width: 100%;", data-value="100")
-                      .item__votes 390 reviews
-                  .item__price.item__price_amazon
-                    strong.item__price-current $14.57
-                    del.item__price-old $157.12
-
-          li.item.item_important
-            h3.item__title Sun oil
-            .item__abstract
-              p Indication Dermatological care
-            .item__elements-wrapper
-              .item__elements
-                a.item__element(href="#")
-                  .item__photo
-                    img(src="/images/item-3.jpg", alt="Фотография")
-                  .item__details
-                    .item__info Avene Thermal Spring water spray 300 ml, 10.5 -Ounce Package
-                    .item__rating
-                      .stars
-                        .stars__current(style="width: 100%;", data-value="100")
-                      .item__votes 390 reviews
-                  .item__price.item__price_amazon
-                    strong.item__price-current $14.57
-                    del.item__price-old $157.12
-
-          li.item.item_important
-            h3.item__title Sun oil
-            .item__abstract
-              p Indication Dermatological care
-            .item__elements-wrapper
-              .item__elements
-                a.item__element(href="#")
-                  .item__photo
-                    img(src="/images/item-3.jpg", alt="Фотография")
-                  .item__details
-                    .item__info Avene Thermal Spring water spray 300 ml, 10.5 -Ounce Package
-                    .item__rating
-                      .stars
-                        .stars__current(style="width: 100%;", data-value="100")
-                      .item__votes 390 reviews
-                  .item__price.item__price_amazon
-                    strong.item__price-current $14.57
-                    del.item__price-old $157.12
-
-          li.item.item_important
-            h3.item__title Sun oil
-            .item__abstract
-              p Indication Dermatological care
-            .item__elements-wrapper
-              .item__elements
-                a.item__element(href="#")
-                  .item__photo
-                    img(src="/images/item-3.jpg", alt="Фотография")
-                  .item__details
-                    .item__info Avene Thermal Spring water spray 300 ml, 10.5 -Ounce Package
-                    .item__rating
-                      .stars
-                        .stars__current(style="width: 100%;", data-value="100")
-                      .item__votes 390 reviews
-                  .item__price.item__price_amazon
-                    strong.item__price-current $14.57
-                    del.item__price-old $157.12
-
-          li.item.item_important
-            h3.item__title Sun oil
-            .item__abstract
-              p Indication Dermatological care
-            .item__elements-wrapper
-              .item__elements
-                a.item__element(href="#")
-                  .item__photo
-                    img(src="/images/item-3.jpg", alt="Фотография")
-                  .item__details
-                    .item__info Avene Thermal Spring water spray 300 ml, 10.5 -Ounce Package
-                    .item__rating
-                      .stars
-                        .stars__current(style="width: 100%;", data-value="100")
-                      .item__votes 390 reviews
-                  .item__price.item__price_amazon
-                    strong.item__price-current $14.57
-                    del.item__price-old $157.12
-
-          li.item.item_important
-            h3.item__title Sun oil
-            .item__abstract
-              p Indication Dermatological care
-            .item__elements-wrapper
-              .item__elements
-                a.item__element(href="#")
-                  .item__photo
-                    img(src="/images/item-3.jpg", alt="Фотография")
-                  .item__details
-                    .item__info Avene Thermal Spring water spray 300 ml, 10.5 -Ounce Package
-                    .item__rating
-                      .stars
-                        .stars__current(style="width: 100%;", data-value="100")
-                      .item__votes 390 reviews
-                  .item__price.item__price_amazon
-                    strong.item__price-current $14.57
-                    del.item__price-old $157.12
-
-          li.item.item_important
-            h3.item__title Sun oil
-            .item__abstract
-              p Indication Dermatological care
-            .item__elements-wrapper
-              .item__elements
-                a.item__element(href="#")
-                  .item__photo
-                    img(src="/images/item-3.jpg", alt="Фотография")
-                  .item__details
-                    .item__info Avene Thermal Spring water spray 300 ml, 10.5 -Ounce Package
-                    .item__rating
-                      .stars
-                        .stars__current(style="width: 100%;", data-value="100")
-                      .item__votes 390 reviews
-                  .item__price.item__price_amazon
-                    strong.item__price-current $14.57
-                    del.item__price-old $157.12
-
-          li.item.item_important
-            h3.item__title Sun oil
-            .item__abstract
-              p Indication Dermatological care
-            .item__elements-wrapper
-              .item__elements
-                a.item__element(href="#")
-                  .item__photo
-                    img(src="/images/item-3.jpg", alt="Фотография")
-                  .item__details
-                    .item__info Avene Thermal Spring water spray 300 ml, 10.5 -Ounce Package
-                    .item__rating
-                      .stars
-                        .stars__current(style="width: 100%;", data-value="100")
-                      .item__votes 390 reviews
-                  .item__price.item__price_amazon
-                    strong.item__price-current $14.57
-                    del.item__price-old $157.12
-
-          li.item.item_important
-            h3.item__title Sun oil
-            .item__abstract
-              p Indication Dermatological care
-            .item__elements-wrapper
-              .item__elements
-                a.item__element(href="#")
-                  .item__photo
-                    img(src="/images/item-3.jpg", alt="Фотография")
-                  .item__details
-                    .item__info Avene Thermal Spring water spray 300 ml, 10.5 -Ounce Package
-                    .item__rating
-                      .stars
-                        .stars__current(style="width: 100%;", data-value="100")
-                      .item__votes 390 reviews
-                  .item__price.item__price_amazon
-                    strong.item__price-current $14.57
-                    del.item__price-old $157.12
-
-          li.item
-            h3.item__title UV protection shirt and shorts
-
-            nav.switcher(data-target="itemlist_1")
-              button.switcher__selected(type="button", data-filter="men") Men
-              button(type="button", data-filter="woman") Woman
-              button(type="button", data-filter="kid") Kids
-
-            .item__elements-wrapper
-
-              .item__elements#itemlist_1
-
-                a.item__element(href="#", data-label="kid")
-                  .item__photo
-                    img(src="/images/item-4.jpg", alt="Фотография")
-                  .item__details
-                    .item__info Kid 1
-                    .item__rating
-                      .stars
-                        .stars__current(style="width: 80%;", data-value="80")
-                      .item__votes 101 reviews
-                  .item__price.item__price_amazon
-                    strong.item__price-current $16.77 - $30.85
-
-                a.item__element(href="#", data-label="kid")
-                  .item__photo
-                    img(src="/images/item-5.jpg", alt="Фотография")
-                  .item__details
-                    .item__info Kid 2
-                    .item__rating
-                      .stars
-                        .stars__current(style="width: 100%;", data-value="100")
-                      .item__votes 390 reviews
-                  .item__price.item__price_amazon
-                    strong.item__price-current $16.77 - $30.85
-
-                a.item__element(href="#", data-label="woman")
-                  .item__photo
-                    img(src="/images/item-4.jpg", alt="Фотография")
-                  .item__details
-                    .item__info Woman 1
-                    .item__rating
-                      .stars
-                        .stars__current(style="width: 80%;", data-value="80")
-                      .item__votes 101 reviews
-                  .item__price.item__price_amazon
-                    strong.item__price-current $16.77 - $30.85
-
-                a.item__element(href="#", data-label="woman")
-                  .item__photo
-                    img(src="/images/item-5.jpg", alt="Фотография")
-                  .item__details
-                    .item__info Woman 2
-                    .item__rating
-                      .stars
-                        .stars__current(style="width: 100%;", data-value="100")
-                      .item__votes 390 reviews
-                  .item__price.item__price_amazon
-                    strong.item__price-current $16.77 - $30.85
-
-
-                a.item__element(href="#", data-label="men kid")
-                  .item__photo
-                    img(src="/images/item-4.jpg", alt="Фотография")
-                  .item__details
-                    .item__info Men Kid
-                    .item__rating
-                      .stars
-                        .stars__current(style="width: 80%;", data-value="80")
-                      .item__votes 101 reviews
-                  .item__price.item__price_amazon
-                    strong.item__price-current $16.77 - $30.85
-
-                a.item__element(href="#", data-label="men")
-                  .item__photo
-                    img(src="/images/item-5.jpg", alt="Фотография")
-                  .item__details
-                    .item__info Men 1
-                    .item__rating
-                      .stars
-                        .stars__current(style="width: 100%;", data-value="100")
-                      .item__votes 390 reviews
-                  .item__price.item__price_amazon
-                    strong.item__price-current $16.77 - $30.85
-
-        form.items-subscribe(action="/subscribe/", method="post")
-          h2.items-subscribe__title Get my Thailand packing list
-          fieldset.items-subscribe__line.items-subscribe__line_email
-            input.items-subscribe__input(type="email", name="email", placeholder="Email", required="required")
-            button.items-subscribe__submit(type="submit") Send
-          fieldset.items-subscribe__line.checkbox
-            input#items-subscribe__update.checkbox__input(type="checkbox", name="update")
-            label.checkbox__label(for="items-subscribe__update") Subscribe me to VacayKit monthly update
-
-
-      section.items(id="kit2")
-        .items__header.items__header_vacination
-          h2.items__title
-            | Vacination
-            span.items__count 7 items
-
-        .items__abstract
-          p Ditch the usual tourist traps and vacation like a native—on foot! With 50 adventures to choose from in each deck, just pick a card from the deck and be on your way.
-          p Whether you're a first time visitor to the city, or just want to discover new terrain, City Walks gives you an intimate view.
-
-        form.items-subscribe(action="/subscribe/", method="post")
-          h2.items-subscribe__title Get my Thailand packing list
-          fieldset.items-subscribe__line.items-subscribe__line_email
-            input.items-subscribe__input(type="email", name="email", placeholder="Email", required="required")
-            button.items-subscribe__submit(type="submit") Send
-          fieldset.items-subscribe__line.checkbox
-            input#items-subscribe__update_kit2.checkbox__input(type="checkbox", name="update")
-            label.checkbox__label(for="items-subscribe__update_kit2") Subscribe me to VacayKit monthly update
-
-
-      section.items(id="kit3")
-        .items__header.items__header_walking
-          h2.items__title
-            | City Walking
-            span.items__count 12 items
-
-        .items__abstract
-          p Ditch the usual tourist traps and vacation like a native—on foot! With 50 adventures to choose from in each deck, just pick a card from the deck and be on your way.
-          p Whether you're a first time visitor to the city, or just want to discover new terrain, City Walks gives you an intimate view.
-
-        form.items-subscribe(action="/subscribe/", method="post")
-          h2.items-subscribe__title Get my Thailand packing list
-          fieldset.items-subscribe__line.items-subscribe__line_email
-            input.items-subscribe__input(type="email", name="email", placeholder="Email", required="required")
-            button.items-subscribe__submit(type="submit") Send
-          fieldset.items-subscribe__line.checkbox
-            input#items-subscribe__update_kit3.checkbox__input(type="checkbox", name="update")
-            label.checkbox__label(for="items-subscribe__update_kit3") Subscribe me to VacayKit monthly update
-
-
-      section.items(id="kit4")
-        .items__header.items__header_aid
-          h2.items__title
-            | First Aid
-            span.items__count 12 items
-
-        .items__abstract
-          p Ditch the usual tourist traps and vacation like a native—on foot! With 50 adventures to choose from in each deck, just pick a card from the deck and be on your way.
-          p Whether you're a first time visitor to the city, or just want to discover new terrain, City Walks gives you an intimate view.
-
-        form.items-subscribe(action="/subscribe/", method="post")
-          h2.items-subscribe__title Get my Thailand packing list
-          fieldset.items-subscribe__line.items-subscribe__line_email
-            input.items-subscribe__input(type="email", name="email", placeholder="Email", required="required")
-            button.items-subscribe__submit(type="submit") Send
-          fieldset.items-subscribe__line.checkbox
-            input#items-subscribe__update_kit4.checkbox__input(type="checkbox", name="update")
-            label.checkbox__label(for="items-subscribe__update_kit4") Subscribe me to VacayKit monthly update
-
-
-      section.items(id="kit5")
-        .items__header.items__header_snorkeling
-          h2.items__title
-            | Snorkeling
-            span.items__count 5 items
-
-        .items__abstract
-          p Ditch the usual tourist traps and vacation like a native—on foot! With 50 adventures to choose from in each deck, just pick a card from the deck and be on your way.
-          p Whether you're a first time visitor to the city, or just want to discover new terrain, City Walks gives you an intimate view.
-
-        form.items-subscribe(action="/subscribe/", method="post")
-          h2.items-subscribe__title Get my Thailand packing list
-          fieldset.items-subscribe__line.items-subscribe__line_email
-            input.items-subscribe__input(type="email", name="email", placeholder="Email", required="required")
-            button.items-subscribe__submit(type="submit") Send
-          fieldset.items-subscribe__line.checkbox
-            input#items-subscribe__update_kit5.checkbox__input(type="checkbox", name="update")
-            label.checkbox__label(for="items-subscribe__update_kit5") Subscribe me to VacayKit monthly update
-
-
-      section.items(id="kit6")
-        .items__header.items__header_trekking
-          h2.items__title
-            | Jungle Trekking
-            span.items__count 12 items
-
-        .items__abstract
-          p Ditch the usual tourist traps and vacation like a native—on foot! With 50 adventures to choose from in each deck, just pick a card from the deck and be on your way.
-          p Whether you're a first time visitor to the city, or just want to discover new terrain, City Walks gives you an intimate view.
-
-        form.items-subscribe(action="/subscribe/", method="post")
-          h2.items-subscribe__title Get my Thailand packing list
-          fieldset.items-subscribe__line.items-subscribe__line_email
-            input.items-subscribe__input(type="email", name="email", placeholder="Email", required="required")
-            button.items-subscribe__submit(type="submit") Send
-          fieldset.items-subscribe__line.checkbox
-            input#items-subscribe__update_kit6.checkbox__input(type="checkbox", name="update")
-            label.checkbox__label(for="items-subscribe__update_kit6") Subscribe me to VacayKit monthly update
-
-
-      section.items(id="kit7")
-        .items__header.items__header_caving
-          h2.items__title
-            | Caving
-            span.items__count 14 items
-
-        .items__abstract
-          p Ditch the usual tourist traps and vacation like a native—on foot! With 50 adventures to choose from in each deck, just pick a card from the deck and be on your way.
-          p Whether you're a first time visitor to the city, or just want to discover new terrain, City Walks gives you an intimate view.
-
-        form.items-subscribe(action="/subscribe/", method="post")
-          h2.items-subscribe__title Get my Thailand packing list
-          fieldset.items-subscribe__line.items-subscribe__line_email
-            input.items-subscribe__input(type="email", name="email", placeholder="Email", required="required")
-            button.items-subscribe__submit(type="submit") Send
-          fieldset.items-subscribe__line.checkbox
-            input#items-subscribe__update_kit7.checkbox__input(type="checkbox", name="update")
-            label.checkbox__label(for="items-subscribe__update_kit7") Subscribe me to VacayKit monthly update
-
-
-      section.items(id="kit8")
-        .items__header.items__header_surfing
-          h2.items__title
-            | Surfing
-            span.items__count 4 items
-
-        .items__abstract
-          p Ditch the usual tourist traps and vacation like a native—on foot! With 50 adventures to choose from in each deck, just pick a card from the deck and be on your way.
-          p Whether you're a first time visitor to the city, or just want to discover new terrain, City Walks gives you an intimate view.
-
-        form.items-subscribe(action="/subscribe/", method="post")
-          h2.items-subscribe__title Get my Thailand packing list
-          fieldset.items-subscribe__line.items-subscribe__line_email
-            input.items-subscribe__input(type="email", name="email", placeholder="Email", required="required")
-            button.items-subscribe__submit(type="submit") Send
-          fieldset.items-subscribe__line.checkbox
-            input#items-subscribe__update_kit8.checkbox__input(type="checkbox", name="update")
-            label.checkbox__label(for="items-subscribe__update_kit8") Subscribe me to VacayKit monthly update
-
-
-      section.items(id="kit9")
-        .items__header.items__header_diving
-          h2.items__title
-            | Scuba Diving
-            span.items__count 2 items
-
-        .items__abstract
-          p Ditch the usual tourist traps and vacation like a native—on foot! With 50 adventures to choose from in each deck, just pick a card from the deck and be on your way.
-          p Whether you're a first time visitor to the city, or just want to discover new terrain, City Walks gives you an intimate view.
-
-        form.items-subscribe(action="/subscribe/", method="post")
-          h2.items-subscribe__title Get my Thailand packing list
-          fieldset.items-subscribe__line.items-subscribe__line_email
-            input.items-subscribe__input(type="email", name="email", placeholder="Email", required="required")
-            button.items-subscribe__submit(type="submit") Send
-          fieldset.items-subscribe__line.checkbox
-            input#items-subscribe__update_kit9.checkbox__input(type="checkbox", name="update")
-            label.checkbox__label(for="items-subscribe__update_kit9") Subscribe me to VacayKit monthly update
-
-
-      section.items(id="kit10")
-        .items__header.items__header_safari
-          h2.items__title
-            | Safari
-            span.items__count 23 items
-
-        .items__abstract
-          p Ditch the usual tourist traps and vacation like a native—on foot! With 50 adventures to choose from in each deck, just pick a card from the deck and be on your way.
-          p Whether you're a first time visitor to the city, or just want to discover new terrain, City Walks gives you an intimate view.
-
-        form.items-subscribe(action="/subscribe/", method="post")
-          h2.items-subscribe__title Get my Thailand packing list
-          fieldset.items-subscribe__line.items-subscribe__line_email
-            input.items-subscribe__input(type="email", name="email", placeholder="Email", required="required")
-            button.items-subscribe__submit(type="submit") Send
-          fieldset.items-subscribe__line.checkbox
-            input#items-subscribe__update_kit10.checkbox__input(type="checkbox", name="update")
-            label.checkbox__label(for="items-subscribe__update_kit10") Subscribe me to VacayKit monthly update
-
-
-      section.items(id="kit11")
-        .items__header.items__header_whales
-          h2.items__title
-            | Whale watching
-            span.items__count 6 items
-
-        .items__abstract
-          p Ditch the usual tourist traps and vacation like a native—on foot! With 50 adventures to choose from in each deck, just pick a card from the deck and be on your way.
-          p Whether you're a first time visitor to the city, or just want to discover new terrain, City Walks gives you an intimate view.
-
-        form.items-subscribe(action="/subscribe/", method="post")
-          h2.items-subscribe__title Get my Thailand packing list
-          fieldset.items-subscribe__line.items-subscribe__line_email
-            input.items-subscribe__input(type="email", name="email", placeholder="Email", required="required")
-            button.items-subscribe__submit(type="submit") Send
-          fieldset.items-subscribe__line.checkbox
-            input#items-subscribe__update_kit11.checkbox__input(type="checkbox", name="update")
-            label.checkbox__label(for="items-subscribe__update_kit11") Subscribe me to VacayKit monthly update
-            
-        section.items(id="kit12")
-          .items__header.items__header_mountin-hiking
-            h2.items__title
-              | Mountin hiking
-              span.items__count 5 items
-
-          .items__abstract
-            p Ditch the usual tourist traps and vacation like a native—on foot! With 50 adventures to choose from in each deck, just pick a card from the deck and be on your way.
-            p Whether you're a first time visitor to the city, or just want to discover new terrain, City Walks gives you an intimate view.
-
-          form.items-subscribe(action="/subscribe/", method="post")
-            h2.items-subscribe__title Get my Thailand packing list
-            fieldset.items-subscribe__line.items-subscribe__line_email
-              input.items-subscribe__input(type="email", name="email", placeholder="Email", required="required")
-              button.items-subscribe__submit(type="submit") Send
-            fieldset.items-subscribe__line.checkbox
-              input#items-subscribe__update_kit11.checkbox__input(type="checkbox", name="update")
-              label.checkbox__label(for="items-subscribe__update_kit11") Subscribe me to VacayKit monthly update
+    header.thailand-bg
+
+        +header_navigation
+
+        .wrapper
+            .kit.kit_thailand
+                span.kit__region Asia
+                h1.kit__country Thailand
+                span.kit__count 8 kits
+
+            button.subscribe(type="button") Get my Packing List
+
+    section.page(data-code="RU")
+        .page__sections
+            button.page__section-button.page__section-button_open(type="button") General Info
+            section.page__section.page__section_open
+
+                aside.info
+
+                    section.info__capital
+                        h2.info__title Capital city
+                        .info__details
+                            p Bangkok
+
+                    section.info__currency
+                        h2.info__title Local currency
+                        .info__details
+                            p.info__currency-name Batt (THB)
+                            p.info__currency-rates
+                                strong.info__currency-rate.info__currency-rate_usd 32 THB
+                                strong.info__currency-rate.info__currency-rate_eur 37 THB
+
+                section.brief
+
+                    p Known as one of the most popular holiday destinations on earth, Thailand has so much to offer travellers that it’s hard to know where to begin. From the golden sandy beaches to the rolling mountains of the North, antique shopping and dining like a king - Thailand has it all.
+
+                    p The south of Thailand has some of the most beautiful beaches and resorts in the world, and going underwater you can find colourful reefs and exotic sea creatures. Bangkok is an Asian metropolis like no other, packed with shopping and fine dining at a fraction of western prices, while the North of Thailand offers culture, a chance to visit remote hill tribes, elephant sanctuaries and treks to hidden waterfalls.
+
+                    p What ever you are looking for in a summer holiday, you can find it in Thailand!
+
+                    .social-likes.social-likes_both
+                        .facebook(title="Share link on Facebook")
+                        .twitter(title="Share link on Twitter",  data-via="vacaykit")
+                        .plusone(title="Share link on Google+") 
+                        .pinterest(title="Share image on Pinterest", data-media="images/header_bg_5.jpg")
+
+
+            button.page__section-button.page__section-button_visible(type="button") Best time to visit
+            section.page__section
+                .best
+                    .best__abstract
+                        p The cool season is the best time to come to Thailand: as well as having more manageable temperatures and less rain, it offers waterfalls in full spate and the best of the upland flowers in bloom. Bear in mind, however, that it’s also the busiest season, so forward planning is essential.
+
+                    .best__stats
+                        .best__stat
+                            h3.best__stat-title Cool Season
+                            p.best__month November — February
+                            p.best__dataset
+                                span.best__label Average temperature
+                                data.best__data 22–33 °C
+                            p.best__dataset
+                                span.best__label Average number of rainy days
+                                data.best__data 1–5
+
+                        .best__stat
+                            h3.best__stat-title Hot Season
+                            p.best__month November — February
+                            p.best__dataset
+                                span.best__label Average temperature
+                                data.best__data 22–33 °C
+                            p.best__dataset
+                                span.best__label Average number of rainy days
+                                data.best__data 1–5
+
+                        .best__stat
+                            h3.best__stat-title Rainy Season
+                            p.best__month November — February
+                            p.best__dataset
+                                span.best__label Average temperature
+                                data.best__data 22–33 °C
+                            p.best__dataset
+                                span.best__label Average number of rainy days
+                                data.best__data 1–5
+
+
+                    .best__graphs
+                        section.best__graph(data-type="temperature", data-max="[78,82,86,88,92,92,88,88,86,84,84,84]", data-min="[70,72,72,74,75,79,75,73,71,68,66,62]",
+                        data-format="F")
+                            header.best__graph-header
+                                h2.best__graph-title Average temperature
+                                nav.switcher
+                                    button.switcher__selected(type="button", data-filter="F") °F
+                                    button(type="button", data-filter="C") °C
+                            svg.best__graph-container
+
+
+
+                        section.best__graph(data-type="precipitation", data-values="[1,2,3,4,13,22,13,11,20,18,5,2]")
+                            h2.best__graph-title Average number of rainy days
+                            svg.best__graph-container
+
+            button.page__subscribe(type="button") Get the Packing List
+
+        .social-likes.social-likes_both.social-likes_alone
+            .facebook(title="Share link on Facebook")
+            .twitter(title="Share link on Twitter",  data-via="vacaykit")
+            .plusone(title="Share link on Google+") 
+            .pinterest(title="Share image on Pinterest", data-media="images/header_bg_5.jpg")
+
+        p.body-disclaimer The following links are affiliate links to Amazon.com or other local Amazon web stores - it depends on your location. The listed prices of all items are the US Amazon store prices at the time of publishing. If you are visiting us from outside the USA and there is an analogous item in your local Amazon web store, you'll be redirected there automatically. We do our best to keep all prices and descriptions up to date, but if you find any errors or inaccuracies, don't hesitate to contact us using our feedback page!
+
+        .recommended
+            h2.recommended__title 
+                | Recommended Travel Guides
+                span.recommended__count 4
+
+            .recommended__list
+                .recommended__items
+
+                    .recommended__item
+                        a.recommended__link(href="#")
+                            .recommended__photo-wrapper
+                                img.recommended__photo(src="/images/cover-1.jpg", alt="Обложка")
+                            h3.recommended__name Lonely Planet Thailand (Travel Guide)
+                            .recommended__details
+                                .recommended__rating
+                                    .stars
+                                        .stars__current(style="width: 100%;", data-value="100")
+                                    .recommended__votes 23 reviews
+                                .recommended__price.recommended__price_amazon
+                                    strong.recommended__price-current $14.57
+
+                    .recommended__item
+                        a.recommended__link(href="#")
+                            .recommended__photo-wrapper
+                                img.recommended__photo(src="/images/cover-2.jpg", alt="Обложка")
+                            h3.recommended__name Thailand: For Tourists - The Traveler's Guide to Make …
+                            .recommended__details
+                                .recommended__rating
+                                    .stars
+                                        .stars__current(style="width: 80%;", data-value="80")
+                                    .recommended__votes 121 reviews
+                                .recommended__price.recommended__price_amazon
+                                    strong.recommended__price-current $14.57
+                                    del.recommended__price-old $157.12
+
+                    .recommended__item
+                        a.recommended__link(href="#")
+                            .recommended__photo-wrapper
+                                img.recommended__photo(src="/images/cover-3.jpg", alt="Обложка")
+                            h3.recommended__name DK Eyewitness Travel Guide: Thailand
+                            .recommended__details
+                                .recommended__rating
+                                    .stars
+                                        .stars__current(style="width: 80%;", data-value="80")
+                                    .recommended__votes 2914 reviews
+                                .recommended__price.recommended__price_amazon
+                                    strong.recommended__price-current $16.00
+
+                    .recommended__item
+                        a.recommended__link(href="#")
+                            .recommended__photo-wrapper
+                                img.recommended__photo(src="/images/cover-4.jpg", alt="Обложка")
+                            h3.recommended__name Lonely Planet Discover Thailand (Travel Guide)
+                            .recommended__details
+                                .recommended__rating
+                                    .stars
+                                        .stars__current(style="width: 40%;", data-value="40")
+                                    .recommended__votes 390 reviews
+                                .recommended__price.recommended__price_amazon
+                                    strong.recommended__price-current $32.0
+
+
+        .kits
+            .kits__available
+                | Available kits
+                span.kits__count 8
+            input(type="checkbox", checked="checked", id="kits__trigger-input", class="kits__trigger-input")
+            label.kits__trigger(for="kits__trigger-input")
+            nav.kits__menu
+                .kits__wrapper
+                    a.kits__kit.kits__kit_beach.kits__kit_active.kits__kit_warnig(href="#kit1")
+                        h3.kits__kit-title On the Beach in the send fish
+                        p.kits__kit-elements 6 items
+                    a.kits__kit.kits__kit_vacination.kits__kit_warnig(href="#kit2")
+                        h3.kits__kit-title Vaccination
+                        p.kits__kit-elements 7 items
+                    a.kits__kit.kits__kit_walking(href="#kit3")
+                        h3.kits__kit-title City Walking
+                        p.kits__kit-elements 12 items
+                    a.kits__kit.kits__kit_aid.kits__kit_warnig(href="#kit4")
+                        h3.kits__kit-title First Aid
+                        p.kits__kit-elements 12 items
+                    a.kits__kit.kits__kit_snorkeling(href="#kit5")
+                        h3.kits__kit-title Snorkeling
+                        p.kits__kit-elements 5 items
+                    a.kits__kit.kits__kit_trekking(href="#kit6")
+                        h3.kits__kit-title Jungle Trekking
+                        p.kits__kit-elements 12 items
+                    a.kits__kit.kits__kit_caving(href="#kit7")
+                        h3.kits__kit-title Caving
+                        p.kits__kit-elements 14 items
+                    a.kits__kit.kits__kit_surfing(href="#kit8")
+                        h3.kits__kit-title Surfing
+                        p.kits__kit-elements 4 items
+                    a.kits__kit.kits__kit_diving(href="#kit9")
+                        h3.kits__kit-title Scuba Diving
+                        p.kits__kit-elements 2 items
+                    a.kits__kit.kits__kit_safari(href="#kit10")
+                        h3.kits__kit-title Safari
+                        p.kits__kit-elements 23 items
+                    a.kits__kit.kits__kit_whales(href="#kit11")
+                        h3.kits__kit-title Whale watching
+                        p.kits__kit-elements 6 items
+                    a.kits__kit.kits__kit_mountin-hiking(href="#kit12")
+                        h3.kits__kit-title Mount Hiking
+                        p.kits__kit-elements 5 items
+
+        .items__wrapper
+            section.items(id="kit1")
+                .items__header.items__header_beach
+                    h2.items__title
+                        | Beach
+                        span.items__count 6 items
+
+                .items__abstract
+                    p Ditch the usual tourist traps and vacation like a native—on foot! With 50 adventures to choose from in each deck, just pick a card from the deck and be on your way.
+                    p Whether you're a first time visitor to the city, or just want to discover new terrain, City Walks gives you an intimate view.
+
+                ol.items__list(data-open="true", data-name="for beaching", data-fold=true)
+
+                    li.item
+                        h3.item__title High sun protection body
+                        .item__abstract
+                            p Everyone needs sunscreen to protect their skin from damaging UV rays from the sun and sunburn. Using sunscreen products decreases the chances for sunburn and can prevent skin cancer or malignant melanoma.
+
+                        .item__elements-wrapper
+                            .item__elements
+
+                                a.item__element(href="#")
+                                    .item__photo
+                                        img(src="/images/item-1.jpg", alt="Фотография")
+                                    .item__details
+                                        .item__info Avene Thermal Spring water spray 300 ml, 10.5 -Ounce Package
+                                        .item__rating
+                                            .stars
+                                                .stars__current(style="width: 50%;", data-value="50")
+                                            .item__votes 101 reviews
+                                    .item__price.item__price_amazon
+                                        strong.item__price-current $14.57
+                                        del.item__price-old $157.12
+
+
+                    li.item
+                        h3.item__title High sun protection face
+                        .item__elements-wrapper
+                            .item__elements
+
+                                a.item__element(href="#")
+                                    .item__photo
+                                        img(src="/images/item-1.jpg", alt="Фотография")
+                                    .item__details
+                                        .item__info Avene Thermal Spring water spray 300 ml, 10.5 -Ounce Package
+                                        .item__rating
+                                            .stars
+                                                .stars__current(style="width: 80%;", data-value="80")
+                                            .item__votes 101 reviews
+                                    .item__price.item__price_amazon
+                                        strong.item__price-current $123.57
+
+                                a.item__element(href="#")
+                                    .item__photo
+                                        img(src="/images/item-2.jpg", alt="Фотография")
+                                    .item__details
+                                        .item__info Avene Thermal Spring Water 3 To Go Kit, 5.28 oz
+                                        .item__rating
+                                            .stars
+                                                .stars__current(style="width: 100%;", data-value="100")
+                                            .item__votes 390 reviews
+                                    .item__price.item__price_amazon
+                                        strong.item__price-current $14.57
+                                        del.item__price-old $157.12
+
+                    li.item.item_important
+                        h3.item__title Sun oil
+                        .item__abstract
+                            p Indication Dermatological care
+                        .item__elements-wrapper
+                            .item__elements
+                                a.item__element(href="#")
+                                    .item__photo
+                                        img(src="/images/item-3.jpg", alt="Фотография")
+                                    .item__details
+                                        .item__info Avene Thermal Spring water spray 300 ml, 10.5 -Ounce Package
+                                        .item__rating
+                                            .stars
+                                                .stars__current(style="width: 100%;", data-value="100")
+                                            .item__votes 390 reviews
+                                    .item__price.item__price_amazon
+                                        strong.item__price-current $14.57
+                                        del.item__price-old $157.12
+
+                    li.item.item_important
+                        h3.item__title Sun oil
+                        .item__abstract
+                            p Indication Dermatological care
+                        .item__elements-wrapper
+                            .item__elements
+                                a.item__element(href="#")
+                                    .item__photo
+                                        img(src="/images/item-3.jpg", alt="Фотография")
+                                    .item__details
+                                        .item__info Avene Thermal Spring water spray 300 ml, 10.5 -Ounce Package
+                                        .item__rating
+                                            .stars
+                                                .stars__current(style="width: 100%;", data-value="100")
+                                            .item__votes 390 reviews
+                                    .item__price.item__price_amazon
+                                        strong.item__price-current $14.57
+                                        del.item__price-old $157.12
+
+                    li.item.item_important
+                        h3.item__title Sun oil
+                        .item__abstract
+                            p Indication Dermatological care
+                        .item__elements-wrapper
+                            .item__elements
+                                a.item__element(href="#")
+                                    .item__photo
+                                        img(src="/images/item-3.jpg", alt="Фотография")
+                                    .item__details
+                                        .item__info Avene Thermal Spring water spray 300 ml, 10.5 -Ounce Package
+                                        .item__rating
+                                            .stars
+                                                .stars__current(style="width: 100%;", data-value="100")
+                                            .item__votes 390 reviews
+                                    .item__price.item__price_amazon
+                                        strong.item__price-current $14.57
+                                        del.item__price-old $157.12
+
+                    li.item.item_important
+                        h3.item__title Sun oil
+                        .item__abstract
+                            p Indication Dermatological care
+                        .item__elements-wrapper
+                            .item__elements
+                                a.item__element(href="#")
+                                    .item__photo
+                                        img(src="/images/item-3.jpg", alt="Фотография")
+                                    .item__details
+                                        .item__info Avene Thermal Spring water spray 300 ml, 10.5 -Ounce Package
+                                        .item__rating
+                                            .stars
+                                                .stars__current(style="width: 100%;", data-value="100")
+                                            .item__votes 390 reviews
+                                    .item__price.item__price_amazon
+                                        strong.item__price-current $14.57
+                                        del.item__price-old $157.12
+
+                    li.item.item_important
+                        h3.item__title Sun oil
+                        .item__abstract
+                            p Indication Dermatological care
+                        .item__elements-wrapper
+                            .item__elements
+                                a.item__element(href="#")
+                                    .item__photo
+                                        img(src="/images/item-3.jpg", alt="Фотография")
+                                    .item__details
+                                        .item__info Avene Thermal Spring water spray 300 ml, 10.5 -Ounce Package
+                                        .item__rating
+                                            .stars
+                                                .stars__current(style="width: 100%;", data-value="100")
+                                            .item__votes 390 reviews
+                                    .item__price.item__price_amazon
+                                        strong.item__price-current $14.57
+                                        del.item__price-old $157.12
+
+                    li.item.item_important
+                        h3.item__title Sun oil
+                        .item__abstract
+                            p Indication Dermatological care
+                        .item__elements-wrapper
+                            .item__elements
+                                a.item__element(href="#")
+                                    .item__photo
+                                        img(src="/images/item-3.jpg", alt="Фотография")
+                                    .item__details
+                                        .item__info Avene Thermal Spring water spray 300 ml, 10.5 -Ounce Package
+                                        .item__rating
+                                            .stars
+                                                .stars__current(style="width: 100%;", data-value="100")
+                                            .item__votes 390 reviews
+                                    .item__price.item__price_amazon
+                                        strong.item__price-current $14.57
+                                        del.item__price-old $157.12
+
+                    li.item.item_important
+                        h3.item__title Sun oil
+                        .item__abstract
+                            p Indication Dermatological care
+                        .item__elements-wrapper
+                            .item__elements
+                                a.item__element(href="#")
+                                    .item__photo
+                                        img(src="/images/item-3.jpg", alt="Фотография")
+                                    .item__details
+                                        .item__info Avene Thermal Spring water spray 300 ml, 10.5 -Ounce Package
+                                        .item__rating
+                                            .stars
+                                                .stars__current(style="width: 100%;", data-value="100")
+                                            .item__votes 390 reviews
+                                    .item__price.item__price_amazon
+                                        strong.item__price-current $14.57
+                                        del.item__price-old $157.12
+
+                    li.item.item_important
+                        h3.item__title Sun oil
+                        .item__abstract
+                            p Indication Dermatological care
+                        .item__elements-wrapper
+                            .item__elements
+                                a.item__element(href="#")
+                                    .item__photo
+                                        img(src="/images/item-3.jpg", alt="Фотография")
+                                    .item__details
+                                        .item__info Avene Thermal Spring water spray 300 ml, 10.5 -Ounce Package
+                                        .item__rating
+                                            .stars
+                                                .stars__current(style="width: 100%;", data-value="100")
+                                            .item__votes 390 reviews
+                                    .item__price.item__price_amazon
+                                        strong.item__price-current $14.57
+                                        del.item__price-old $157.12
+
+                    li.item.item_important
+                        h3.item__title Sun oil
+                        .item__abstract
+                            p Indication Dermatological care
+                        .item__elements-wrapper
+                            .item__elements
+                                a.item__element(href="#")
+                                    .item__photo
+                                        img(src="/images/item-3.jpg", alt="Фотография")
+                                    .item__details
+                                        .item__info Avene Thermal Spring water spray 300 ml, 10.5 -Ounce Package
+                                        .item__rating
+                                            .stars
+                                                .stars__current(style="width: 100%;", data-value="100")
+                                            .item__votes 390 reviews
+                                    .item__price.item__price_amazon
+                                        strong.item__price-current $14.57
+                                        del.item__price-old $157.12
+
+                    li.item.item_important
+                        h3.item__title Sun oil
+                        .item__abstract
+                            p Indication Dermatological care
+                        .item__elements-wrapper
+                            .item__elements
+                                a.item__element(href="#")
+                                    .item__photo
+                                        img(src="/images/item-3.jpg", alt="Фотография")
+                                    .item__details
+                                        .item__info Avene Thermal Spring water spray 300 ml, 10.5 -Ounce Package
+                                        .item__rating
+                                            .stars
+                                                .stars__current(style="width: 100%;", data-value="100")
+                                            .item__votes 390 reviews
+                                    .item__price.item__price_amazon
+                                        strong.item__price-current $14.57
+                                        del.item__price-old $157.12
+
+                    li.item
+                        h3.item__title UV protection shirt and shorts
+
+                        nav.switcher(data-target="itemlist_1")
+                            button.switcher__selected(type="button", data-filter="men") Men
+                            button(type="button", data-filter="woman") Woman
+                            button(type="button", data-filter="kid") Kids
+
+                        .item__elements-wrapper
+
+                            .item__elements#itemlist_1
+
+                                a.item__element(href="#", data-label="kid")
+                                    .item__photo
+                                        img(src="/images/item-4.jpg", alt="Фотография")
+                                    .item__details
+                                        .item__info Kid 1
+                                        .item__rating
+                                            .stars
+                                                .stars__current(style="width: 80%;", data-value="80")
+                                            .item__votes 101 reviews
+                                    .item__price.item__price_amazon
+                                        strong.item__price-current $16.77 - $30.85
+
+                                a.item__element(href="#", data-label="kid")
+                                    .item__photo
+                                        img(src="/images/item-5.jpg", alt="Фотография")
+                                    .item__details
+                                        .item__info Kid 2
+                                        .item__rating
+                                            .stars
+                                                .stars__current(style="width: 100%;", data-value="100")
+                                            .item__votes 390 reviews
+                                    .item__price.item__price_amazon
+                                        strong.item__price-current $16.77 - $30.85
+
+                                a.item__element(href="#", data-label="woman")
+                                    .item__photo
+                                        img(src="/images/item-4.jpg", alt="Фотография")
+                                    .item__details
+                                        .item__info Woman 1
+                                        .item__rating
+                                            .stars
+                                                .stars__current(style="width: 80%;", data-value="80")
+                                            .item__votes 101 reviews
+                                    .item__price.item__price_amazon
+                                        strong.item__price-current $16.77 - $30.85
+
+                                a.item__element(href="#", data-label="woman")
+                                    .item__photo
+                                        img(src="/images/item-5.jpg", alt="Фотография")
+                                    .item__details
+                                        .item__info Woman 2
+                                        .item__rating
+                                            .stars
+                                                .stars__current(style="width: 100%;", data-value="100")
+                                            .item__votes 390 reviews
+                                    .item__price.item__price_amazon
+                                        strong.item__price-current $16.77 - $30.85
+
+
+                                a.item__element(href="#", data-label="men kid")
+                                    .item__photo
+                                        img(src="/images/item-4.jpg", alt="Фотография")
+                                    .item__details
+                                        .item__info Men Kid
+                                        .item__rating
+                                            .stars
+                                                .stars__current(style="width: 80%;", data-value="80")
+                                            .item__votes 101 reviews
+                                    .item__price.item__price_amazon
+                                        strong.item__price-current $16.77 - $30.85
+
+                                a.item__element(href="#", data-label="men")
+                                    .item__photo
+                                        img(src="/images/item-5.jpg", alt="Фотография")
+                                    .item__details
+                                        .item__info Men 1
+                                        .item__rating
+                                            .stars
+                                                .stars__current(style="width: 100%;", data-value="100")
+                                            .item__votes 390 reviews
+                                    .item__price.item__price_amazon
+                                        strong.item__price-current $16.77 - $30.85
+
+                form.items-subscribe(action="/subscribe/", method="post")
+                    h2.items-subscribe__title Get my Thailand packing list
+                    fieldset.items-subscribe__line.items-subscribe__line_email
+                        input.items-subscribe__input(type="email", name="email", placeholder="Email", required="required")
+                        button.items-subscribe__submit(type="submit") Send
+                    fieldset.items-subscribe__line.checkbox
+                        input#items-subscribe__update.checkbox__input(type="checkbox", name="update")
+                        label.checkbox__label(for="items-subscribe__update") Subscribe me to VacayKit monthly update
+
+
+            section.items(id="kit2")
+                .items__header.items__header_vacination
+                    h2.items__title
+                        | Vacination
+                        span.items__count 7 items
+
+                .items__abstract
+                    p Ditch the usual tourist traps and vacation like a native—on foot! With 50 adventures to choose from in each deck, just pick a card from the deck and be on your way.
+                    p Whether you're a first time visitor to the city, or just want to discover new terrain, City Walks gives you an intimate view.
+
+                form.items-subscribe(action="/subscribe/", method="post")
+                    h2.items-subscribe__title Get my Thailand packing list
+                    fieldset.items-subscribe__line.items-subscribe__line_email
+                        input.items-subscribe__input(type="email", name="email", placeholder="Email", required="required")
+                        button.items-subscribe__submit(type="submit") Send
+                    fieldset.items-subscribe__line.checkbox
+                        input#items-subscribe__update_kit2.checkbox__input(type="checkbox", name="update")
+                        label.checkbox__label(for="items-subscribe__update_kit2") Subscribe me to VacayKit monthly update
+
+
+            section.items(id="kit3")
+                .items__header.items__header_walking
+                    h2.items__title
+                        | City Walking
+                        span.items__count 12 items
+
+                .items__abstract
+                    p Ditch the usual tourist traps and vacation like a native—on foot! With 50 adventures to choose from in each deck, just pick a card from the deck and be on your way.
+                    p Whether you're a first time visitor to the city, or just want to discover new terrain, City Walks gives you an intimate view.
+
+                form.items-subscribe(action="/subscribe/", method="post")
+                    h2.items-subscribe__title Get my Thailand packing list
+                    fieldset.items-subscribe__line.items-subscribe__line_email
+                        input.items-subscribe__input(type="email", name="email", placeholder="Email", required="required")
+                        button.items-subscribe__submit(type="submit") Send
+                    fieldset.items-subscribe__line.checkbox
+                        input#items-subscribe__update_kit3.checkbox__input(type="checkbox", name="update")
+                        label.checkbox__label(for="items-subscribe__update_kit3") Subscribe me to VacayKit monthly update
+
+
+            section.items(id="kit4")
+                .items__header.items__header_aid
+                    h2.items__title
+                        | First Aid
+                        span.items__count 12 items
+
+                .items__abstract
+                    p Ditch the usual tourist traps and vacation like a native—on foot! With 50 adventures to choose from in each deck, just pick a card from the deck and be on your way.
+                    p Whether you're a first time visitor to the city, or just want to discover new terrain, City Walks gives you an intimate view.
+
+                form.items-subscribe(action="/subscribe/", method="post")
+                    h2.items-subscribe__title Get my Thailand packing list
+                    fieldset.items-subscribe__line.items-subscribe__line_email
+                        input.items-subscribe__input(type="email", name="email", placeholder="Email", required="required")
+                        button.items-subscribe__submit(type="submit") Send
+                    fieldset.items-subscribe__line.checkbox
+                        input#items-subscribe__update_kit4.checkbox__input(type="checkbox", name="update")
+                        label.checkbox__label(for="items-subscribe__update_kit4") Subscribe me to VacayKit monthly update
+
+
+            section.items(id="kit5")
+                .items__header.items__header_snorkeling
+                    h2.items__title
+                        | Snorkeling
+                        span.items__count 5 items
+
+                .items__abstract
+                    p Ditch the usual tourist traps and vacation like a native—on foot! With 50 adventures to choose from in each deck, just pick a card from the deck and be on your way.
+                    p Whether you're a first time visitor to the city, or just want to discover new terrain, City Walks gives you an intimate view.
+
+                form.items-subscribe(action="/subscribe/", method="post")
+                    h2.items-subscribe__title Get my Thailand packing list
+                    fieldset.items-subscribe__line.items-subscribe__line_email
+                        input.items-subscribe__input(type="email", name="email", placeholder="Email", required="required")
+                        button.items-subscribe__submit(type="submit") Send
+                    fieldset.items-subscribe__line.checkbox
+                        input#items-subscribe__update_kit5.checkbox__input(type="checkbox", name="update")
+                        label.checkbox__label(for="items-subscribe__update_kit5") Subscribe me to VacayKit monthly update
+
+
+            section.items(id="kit6")
+                .items__header.items__header_trekking
+                    h2.items__title
+                        | Jungle Trekking
+                        span.items__count 12 items
+
+                .items__abstract
+                    p Ditch the usual tourist traps and vacation like a native—on foot! With 50 adventures to choose from in each deck, just pick a card from the deck and be on your way.
+                    p Whether you're a first time visitor to the city, or just want to discover new terrain, City Walks gives you an intimate view.
+
+                form.items-subscribe(action="/subscribe/", method="post")
+                    h2.items-subscribe__title Get my Thailand packing list
+                    fieldset.items-subscribe__line.items-subscribe__line_email
+                        input.items-subscribe__input(type="email", name="email", placeholder="Email", required="required")
+                        button.items-subscribe__submit(type="submit") Send
+                    fieldset.items-subscribe__line.checkbox
+                        input#items-subscribe__update_kit6.checkbox__input(type="checkbox", name="update")
+                        label.checkbox__label(for="items-subscribe__update_kit6") Subscribe me to VacayKit monthly update
+
+
+            section.items(id="kit7")
+                .items__header.items__header_caving
+                    h2.items__title
+                        | Caving
+                        span.items__count 14 items
+
+                .items__abstract
+                    p Ditch the usual tourist traps and vacation like a native—on foot! With 50 adventures to choose from in each deck, just pick a card from the deck and be on your way.
+                    p Whether you're a first time visitor to the city, or just want to discover new terrain, City Walks gives you an intimate view.
+
+                form.items-subscribe(action="/subscribe/", method="post")
+                    h2.items-subscribe__title Get my Thailand packing list
+                    fieldset.items-subscribe__line.items-subscribe__line_email
+                        input.items-subscribe__input(type="email", name="email", placeholder="Email", required="required")
+                        button.items-subscribe__submit(type="submit") Send
+                    fieldset.items-subscribe__line.checkbox
+                        input#items-subscribe__update_kit7.checkbox__input(type="checkbox", name="update")
+                        label.checkbox__label(for="items-subscribe__update_kit7") Subscribe me to VacayKit monthly update
+
+
+            section.items(id="kit8")
+                .items__header.items__header_surfing
+                    h2.items__title
+                        | Surfing
+                        span.items__count 4 items
+
+                .items__abstract
+                    p Ditch the usual tourist traps and vacation like a native—on foot! With 50 adventures to choose from in each deck, just pick a card from the deck and be on your way.
+                    p Whether you're a first time visitor to the city, or just want to discover new terrain, City Walks gives you an intimate view.
+
+                form.items-subscribe(action="/subscribe/", method="post")
+                    h2.items-subscribe__title Get my Thailand packing list
+                    fieldset.items-subscribe__line.items-subscribe__line_email
+                        input.items-subscribe__input(type="email", name="email", placeholder="Email", required="required")
+                        button.items-subscribe__submit(type="submit") Send
+                    fieldset.items-subscribe__line.checkbox
+                        input#items-subscribe__update_kit8.checkbox__input(type="checkbox", name="update")
+                        label.checkbox__label(for="items-subscribe__update_kit8") Subscribe me to VacayKit monthly update
+
+
+            section.items(id="kit9")
+                .items__header.items__header_diving
+                    h2.items__title
+                        | Scuba Diving
+                        span.items__count 2 items
+
+                .items__abstract
+                    p Ditch the usual tourist traps and vacation like a native—on foot! With 50 adventures to choose from in each deck, just pick a card from the deck and be on your way.
+                    p Whether you're a first time visitor to the city, or just want to discover new terrain, City Walks gives you an intimate view.
+
+                form.items-subscribe(action="/subscribe/", method="post")
+                    h2.items-subscribe__title Get my Thailand packing list
+                    fieldset.items-subscribe__line.items-subscribe__line_email
+                        input.items-subscribe__input(type="email", name="email", placeholder="Email", required="required")
+                        button.items-subscribe__submit(type="submit") Send
+                    fieldset.items-subscribe__line.checkbox
+                        input#items-subscribe__update_kit9.checkbox__input(type="checkbox", name="update")
+                        label.checkbox__label(for="items-subscribe__update_kit9") Subscribe me to VacayKit monthly update
+
+
+            section.items(id="kit10")
+                .items__header.items__header_safari
+                    h2.items__title
+                        | Safari
+                        span.items__count 23 items
+
+                .items__abstract
+                    p Ditch the usual tourist traps and vacation like a native—on foot! With 50 adventures to choose from in each deck, just pick a card from the deck and be on your way.
+                    p Whether you're a first time visitor to the city, or just want to discover new terrain, City Walks gives you an intimate view.
+
+                form.items-subscribe(action="/subscribe/", method="post")
+                    h2.items-subscribe__title Get my Thailand packing list
+                    fieldset.items-subscribe__line.items-subscribe__line_email
+                        input.items-subscribe__input(type="email", name="email", placeholder="Email", required="required")
+                        button.items-subscribe__submit(type="submit") Send
+                    fieldset.items-subscribe__line.checkbox
+                        input#items-subscribe__update_kit10.checkbox__input(type="checkbox", name="update")
+                        label.checkbox__label(for="items-subscribe__update_kit10") Subscribe me to VacayKit monthly update
+
+
+            section.items(id="kit11")
+                .items__header.items__header_whales
+                    h2.items__title
+                        | Whale watching
+                        span.items__count 6 items
+
+                .items__abstract
+                    p Ditch the usual tourist traps and vacation like a native—on foot! With 50 adventures to choose from in each deck, just pick a card from the deck and be on your way.
+                    p Whether you're a first time visitor to the city, or just want to discover new terrain, City Walks gives you an intimate view.
+
+                form.items-subscribe(action="/subscribe/", method="post")
+                    h2.items-subscribe__title Get my Thailand packing list
+                    fieldset.items-subscribe__line.items-subscribe__line_email
+                        input.items-subscribe__input(type="email", name="email", placeholder="Email", required="required")
+                        button.items-subscribe__submit(type="submit") Send
+                    fieldset.items-subscribe__line.checkbox
+                        input#items-subscribe__update_kit11.checkbox__input(type="checkbox", name="update")
+                        label.checkbox__label(for="items-subscribe__update_kit11") Subscribe me to VacayKit monthly update
+
+                section.items(id="kit12")
+                    .items__header.items__header_mountin-hiking
+                        h2.items__title
+                            | Mountin hiking
+                            span.items__count 5 items
+
+                    .items__abstract
+                        p Ditch the usual tourist traps and vacation like a native—on foot! With 50 adventures to choose from in each deck, just pick a card from the deck and be on your way.
+                        p Whether you're a first time visitor to the city, or just want to discover new terrain, City Walks gives you an intimate view.
+
+                    form.items-subscribe(action="/subscribe/", method="post")
+                        h2.items-subscribe__title Get my Thailand packing list
+                        fieldset.items-subscribe__line.items-subscribe__line_email
+                            input.items-subscribe__input(type="email", name="email", placeholder="Email", required="required")
+                            button.items-subscribe__submit(type="submit") Send
+                        fieldset.items-subscribe__line.checkbox
+                            input#items-subscribe__update_kit11.checkbox__input(type="checkbox", name="update")
+                            label.checkbox__label(for="items-subscribe__update_kit11") Subscribe me to VacayKit monthly update
