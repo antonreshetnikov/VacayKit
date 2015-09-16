@@ -48,7 +48,12 @@ var gulp = require('gulp')
     };
 
 gulp.task('list', function () {
-  gulp.src(dirs.source.copy).pipe(gulp.dest(dirs.build.html));
+  gulp.src(dirs.source.copy)
+    .pipe(gulpif(/[.](js)$/, uglify()))
+    .pipe(gulpif(/[.](css)$/, csso()))
+    .pipe(gulp.dest(dirs.build.html));
+
+
   find.file(/\.html$/, dirs.build.html, function (files){
     var names = []
         , file;
