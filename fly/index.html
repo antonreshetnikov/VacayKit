@@ -34,14 +34,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-icon-180x180.png"/>
     <link rel="apple-touch-icon" sizes="192x192" href="/images/favicon/apple-icon-precomposed.png"/>
     <link rel="stylesheet" href="/css/styles.min.css"/>
-    <script src="/js/modernizr/modernizr.js"></script>
-    <script src="/js/jquery/dist/jquery.min.js"></script>
-    <script src="/js/jquery.scrollTo/jquery.scrollTo.min.js"></script>
-    <script src="/js/handlebars/handlebars.min.js"></script>
-    <script src="/js/d3/d3.min.js"></script>
     <link rel="stylesheet" href="/js/social-likes/social-likes_flat.css"/>
-    <script src="/js/social-likes/social-likes.min.js"></script>
-    <script src="/js/scripts.js" defer="defer" async="async"></script>
+    <script src="/js/modernizr/modernizr.js"></script>
   </head>
   <body>
     <header class="fly-bg">
@@ -265,12 +259,12 @@
     </div>
     <script id="select-template" type="text/x-handlebars-template">
       <span class="select">
-        <span class="select__current select__current_unchanged">Please select</span>
-        <span class="select__dropdown">
-          {{#each options}}
-          <span tabindex="{{../tab}}" class="select__option" data-value="{{value}}">{{label}}</span>
-          {{/each}}
-        </span>
+          <span class="select__current select__current_unchanged">Please select</span>
+          <span class="select__dropdown">
+              {{#each options}}
+              <span tabindex="{{../tab}}" class="select__option" data-value="{{value}}">{{label}}</span>
+              {{/each}}
+          </span>
       </span>
       
     </script>
@@ -282,6 +276,13 @@
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
       ga('create', 'UA-62123734-1', 'auto');
       ga('send', 'pageview');
+      
     </script>
+    <script src="/js/jquery/dist/jquery.min.js"></script>
+    <script src="/js/jquery.scrollTo/jquery.scrollTo.min.js"></script>
+    <script src="/js/handlebars/handlebars.min.js"></script>
+    <script src="/js/d3/d3.min.js"></script>
+    <script src="/js/social-likes/social-likes.min.js"></script>
+    <script src="/js/scripts.js" defer="defer" async="async"></script>
   </body>
 </html>
