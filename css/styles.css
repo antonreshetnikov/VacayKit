@@ -3585,6 +3585,8 @@ html body .page__section-button_open {
 html body .social-likes {
   margin: 2px 0 24px;
   pointer-events: all;
+  white-space: nowrap;
+  min-width: 384px;
 }
 html body .social-likes:after {
   content: ".";
@@ -3609,10 +3611,39 @@ html body .social-likes_alone {
 html body .social-likes_mobile {
   display: none;
 }
+html body .social-likes__icon {
+  left: 0;
+  padding-left: 11px;
+}
+html body .social-likes__icon_plusone:before {
+  font-family: 'icon';
+  content: "\e00B";
+}
+html body .social-likes__icon_facebook:before {
+  font-family: 'icon';
+  content: "\e00E";
+}
+html body .social-likes__icon_twitter:before {
+  font-family: 'icon';
+  content: "\e00D";
+}
+html body .social-likes__icon_pinterest:before {
+  font-family: 'icon';
+  content: "\e00C";
+}
 html body .social-likes__widget {
-  margin: 0 2px 0 0;
+  margin: 0 11px 0 0;
+  text-align: right;
   float: left;
+  border-radius: 4px;
+  min-width: 85px;
   transition: background-color 0.15s;
+}
+html body .social-likes__widget_plusone {
+  background-color: #de4b3a;
+}
+html body .social-likes__widget_plusone:hover {
+  background-color: #c03120;
 }
 html body .social-likes__widget_facebook {
   background-color: #325a97;
@@ -3636,11 +3667,12 @@ html body .social-likes__button {
   line-height: 35px;
   font-size: 13px;
   font-weight: 300;
-  padding: 0 10px 0 30px;
+  padding: 0 10px 0 40px;
+  min-width: 85px;
   -webkit-font-smoothing: auto;
 }
 html body .social-likes__icon {
-  left: 8px;
+  left: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
