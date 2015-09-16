@@ -59,20 +59,28 @@
   <body>
     <header class="landing-bg">
           <nav class="project"><a href="/">
-              <h1 class="logotype">VacayKit</h1></a>
+              <div class="logotype">VacayKit</div></a>
             <button type="button" class="hamburger"><span class="hamburger__line hamburger__line_top"></span><span class="hamburger__line hamburger__line_middle"></span><span class="hamburger__line hamburger__line_bottom"></span></button>
-            <div class="project__wrapper"><a href="/" class="project__link project__link_mobile">Home</a>
+            <div class="project__wrapper">
+              <nav class="social"><a href="http://www.facebook.com/vacaykit" class="fb"></a><a href="https://plus.google.com/117175355767839684889/" class="gp">       </a><a href="http://twitter.com/vacaykit" class="tw"></a><a href="http://instagram.com/vacaykit/" class="in"></a></nav><a href="/" class="project__link project__link_mobile">Home</a>
               <div class="dropdown">
-                <h2 class="dropdown__title">Popular kits</h2>
+                <div class="dropdown__title">Popular lists</div>
                 <div class="dropdown__panel">
                   <div class="dropdown__wrapper">
                     <ul class="dropdown__body">
-                      <li><a href="/long_flight_kit/">Long Flight Kit</a></li>
-                      <li><a href="/asia/malaysia/">Malaysia</a></li>
+                      <li><a href="/asia/malaysia/">Malaysia packing list</a></li>
+                      <li><a href="/asia/sri_lanka/">Sri Lanka packing list</a></li>
+                      <li><a href="/asia/indonesia/">Indonesia packing list</a></li>
+                      <li><a href="/asia/thailand/">Thailand packing list</a></li>
+                      <li><a href="/asia/philippines/">Philippines packing list</a></li>
+                      <li><a href="/asia/indonesia/">Cambodia packing list</a></li>
+                      <li><a href="/asia/vietnam/">Vietnam packing list</a></li>
+                      <li><a href="/asia/laos/">Laos packing list</a></li>
+                      <li><a href="/long_flight_kit/">Long Flight Kit              </a></li>
                     </ul>
                   </div>
                 </div>
-              </div><a href="/stories" class="project__link">Travel stories</a><a href="/about" class="project__link">About</a><a href="/contact" class="project__link project__link_mobile">Contact us</a>
+              </div><a href="/stories" class="project__link">Travel blog</a><a href="/about" class="project__link">About</a><a href="/contact" class="project__link project__link_mobile">Contact us</a>
             </div>
             <div class="project__lightbox"></div>
           </nav>
@@ -81,7 +89,10 @@
       </div>
     </header>
     <section class="landing">
-      <p class="landing__message">VacayKit is a simple online app designed to deliver customized travel kits for unique holiday activities anywhere you want to go in the world. Pick your destination, grab your vacation kits, and have the holiday experience of a lifetime!</p>
+      <div class="landing__message"> 
+        <h1>VacayKit is a simple online app designed to deliver customized travel lists for unique holiday activities anywhere you want to go in the world.</h1>
+        <p>Pick your destination, grab your vacation kits, and have the holiday experience of a lifetime!</p>
+      </div>
       <form action="/show/kit/" method="post" class="landing__selector">
         <label for="kit-selector">I'm travelling to</label>
         <select id="kit-selector" data-select="true">

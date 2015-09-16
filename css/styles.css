@@ -1014,125 +1014,6 @@ body > footer .project__link {
 body > footer .project__link:hover {
   color: #fc571f;
 }
-body > footer .social {
-  float: right;
-  white-space: nowrap;
-}
-body > footer .social a {
-  vertical-align: middle;
-  display: inline-block;
-  width: 35px;
-  height: 18px;
-  margin: 0 0 0 10px;
-  padding: 17px 0 0;
-  border-radius: 100%;
-  text-decoration: none;
-  transition: background-color 0.25s;
-  line-height: 0;
-  text-align: center;
-}
-body > footer .social a:active {
-  box-shadow: inset 0 2px 0 0 rgba(62,66,71,0.4);
-}
-body > footer .social a:first-child {
-  margin: 0;
-}
-body > footer .social a:before {
-  font-family: 'icon';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  text-decoration: inherit;
-  vertical-align: middle;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  font-size: 21px;
-  color: #fff;
-}
-body > footer .social a.ln {
-  background-color: #007bb6;
-}
-body > footer .social a.ln:before {
-  content: "\e00A";
-}
-body > footer .social a.ln:hover {
-  background-color: #0085c5;
-}
-body > footer .social a.ln:active {
-  background-color: #016696;
-}
-body > footer .social a.in {
-  background-color: #3f729b;
-}
-body > footer .social a.in:before {
-  content: "\e009";
-}
-body > footer .social a.in:hover {
-  background-color: #4c8abc;
-}
-body > footer .social a.in:active {
-  background-color: #1c5380;
-}
-body > footer .social a.fb {
-  background-color: #3b5fa6;
-}
-body > footer .social a.fb:before {
-  content: "\e002";
-}
-body > footer .social a.fb:hover {
-  background-color: #5580d5;
-}
-body > footer .social a.fb:active {
-  background-color: #2f5196;
-}
-body > footer .social a.tw {
-  background-color: #47a6ed;
-}
-body > footer .social a.tw:before {
-  content: "\e005";
-}
-body > footer .social a.tw:hover {
-  background-color: #71bff9;
-}
-body > footer .social a.tw:active {
-  background-color: #3692d6;
-}
-body > footer .social a.gp {
-  background-color: #d24238;
-}
-body > footer .social a.gp:before {
-  content: "\e003";
-}
-body > footer .social a.gp:hover {
-  background-color: #e76158;
-}
-body > footer .social a.gp:active {
-  background-color: #bc3027;
-}
-body > footer .social a.pi {
-  background-color: #aa262a;
-}
-body > footer .social a.pi:before {
-  content: "\e004";
-}
-body > footer .social a.pi:hover {
-  background-color: #c9393d;
-}
-body > footer .social a.pi:active {
-  background-color: #991c20;
-}
-body > footer .social a.yt {
-  background-color: #e52c28;
-}
-body > footer .social a.yt:before {
-  content: "\e007";
-}
-body > footer .social a.yt:hover {
-  background-color: #fa5451;
-}
-body > footer .social a.yt:active {
-  background-color: #ce221e;
-}
 @media (max-width: 1024px) {
   html > body > footer .copyright span {
     display: none;
@@ -1467,6 +1348,11 @@ body>header .project__link_mobile {
   body>header .wrapper {
     max-width: initial;
     margin: 0 20px;
+  }
+}
+@media (max-width: 800px) {
+  body>header .social {
+    display: none;
   }
 }
 @media (max-width: 768px) {
@@ -2218,6 +2104,7 @@ body>header .project__link_mobile {
   background-color: #ff7043;
   background-image: url("../images/activities/item_first_aid.jpg");
   color: #fff;
+  margin-top: 25px;
 }
 .items__header_snorkeling {
   background-color: #29b6f6;
@@ -2252,6 +2139,11 @@ body>header .project__link_mobile {
 .items__header_mountin-hiking {
   background-color: #b19c9c;
   background-image: url("../images/activities/item_mountain_hiking.jpg");
+  color: #fff;
+}
+.items__header_hiking {
+  background-color: #b19c9c;
+  background-image: url("../images/activities/item_hiking.jpg");
   color: #fff;
 }
 .items__header_komodo_dragon {
@@ -2297,6 +2189,46 @@ body>header .project__link_mobile {
 .items__header_gibbons {
   background-color: #aa802b;
   background-image: url("../images/activities/item_gibbons.jpg");
+  color: #fff;
+}
+.items__header_ballooning {
+  background-color: #6cf;
+  background-image: url("../images/activities/item_ballooning.jpg");
+  color: #fff;
+}
+.items__header_nazca {
+  background-color: #c6ae92;
+  background-image: url("../images/activities/item_nazca.jpg");
+  color: #fff;
+}
+.items__header_titicaca {
+  background-color: #2e64c8;
+  background-image: url("../images/activities/item_titicaca.jpg");
+  color: #fff;
+}
+.items__header_sandboarding {
+  background-color: #eeb685;
+  background-image: url("../images/activities/item_sandboarding.jpg");
+  color: #fff;
+}
+.items__header_galapagos {
+  background-color: #a5b471;
+  background-image: url("../images/activities/item_galapagos.jpg");
+  color: #fff;
+}
+.items__header_horses {
+  background-color: #ff9737;
+  background-image: url("../images/activities/item_horses.jpg");
+  color: #fff;
+}
+.items__header_horses {
+  background-color: #ff9737;
+  background-image: url("../images/activities/item_horses.jpg");
+  color: #fff;
+}
+.items__header_archaeology {
+  background-color: #7e7d83;
+  background-image: url("../images/activities/item_archaeology.jpg");
   color: #fff;
 }
 .items__title {
@@ -2638,6 +2570,10 @@ body>header .project__link_mobile {
   background-color: #b19c9c;
   background-image: url("../svg/icons/mountain_hiking.svg");
 }
+.kits__kit_hiking:before {
+  background-color: #b19c9c;
+  background-image: url("../svg/icons/mountain_hiking.svg");
+}
 .kits__kit_komodo_dragon:before {
   background-color: #a5b471;
   background-image: url("../svg/icons/komodo_dragon.svg");
@@ -2673,6 +2609,30 @@ body>header .project__link_mobile {
 .kits__kit_gibbons:before {
   background-color: #aa802b;
   background-image: url("../svg/icons/gibbons.svg");
+}
+.kits__kit_ballooning:before {
+  background-color: #6cf;
+  background-image: url("../svg/icons/ballooning.svg");
+}
+.kits__kit_nazca:before {
+  background-color: #c6ae92;
+  background-image: url("../svg/icons/nazca.svg");
+}
+.kits__kit_boating:before {
+  background-color: #2e64c8;
+  background-image: url("../svg/icons/boating.svg");
+}
+.kits__kit_sandboarding:before {
+  background-color: #eeb685;
+  background-image: url("../svg/icons/sandboarding.svg");
+}
+.kits__kit_horses:before {
+  background-color: #ff9737;
+  background-image: url("../svg/icons/horses.svg");
+}
+.kits__kit_archaeology:before {
+  background-color: #7e7d83;
+  background-image: url("../svg/icons/archaeology.svg");
 }
 @media (max-width: 1120px) {
   .kits {
@@ -3503,6 +3463,125 @@ html body .page__section-button_open {
   background-color: #f3f6f9;
 }
 
+.social {
+  float: right;
+  white-space: nowrap;
+}
+.social a {
+  vertical-align: middle;
+  display: inline-block;
+  width: 35px;
+  height: 18px;
+  margin: 0 0 0 10px;
+  padding: 17px 0 0;
+  border-radius: 100%;
+  text-decoration: none;
+  transition: background-color 0.25s;
+  line-height: 0;
+  text-align: center;
+}
+.social a:active {
+  box-shadow: inset 0 2px 0 0 rgba(62,66,71,0.4);
+}
+.social a:first-child {
+  margin: 0;
+}
+.social a:before {
+  font-family: 'icon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  vertical-align: middle;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: 21px;
+  color: #fff;
+}
+.social a.ln {
+  background-color: #007bb6;
+}
+.social a.ln:before {
+  content: "\e00A";
+}
+.social a.ln:hover {
+  background-color: #0085c5;
+}
+.social a.ln:active {
+  background-color: #016696;
+}
+.social a.in {
+  background-color: #3f729b;
+}
+.social a.in:before {
+  content: "\e009";
+}
+.social a.in:hover {
+  background-color: #4c8abc;
+}
+.social a.in:active {
+  background-color: #1c5380;
+}
+.social a.fb {
+  background-color: #3b5fa6;
+}
+.social a.fb:before {
+  content: "\e002";
+}
+.social a.fb:hover {
+  background-color: #5580d5;
+}
+.social a.fb:active {
+  background-color: #2f5196;
+}
+.social a.tw {
+  background-color: #47a6ed;
+}
+.social a.tw:before {
+  content: "\e005";
+}
+.social a.tw:hover {
+  background-color: #71bff9;
+}
+.social a.tw:active {
+  background-color: #3692d6;
+}
+.social a.gp {
+  background-color: #d24238;
+}
+.social a.gp:before {
+  content: "\e003";
+}
+.social a.gp:hover {
+  background-color: #e76158;
+}
+.social a.gp:active {
+  background-color: #bc3027;
+}
+.social a.pi {
+  background-color: #aa262a;
+}
+.social a.pi:before {
+  content: "\e004";
+}
+.social a.pi:hover {
+  background-color: #c9393d;
+}
+.social a.pi:active {
+  background-color: #991c20;
+}
+.social a.yt {
+  background-color: #e52c28;
+}
+.social a.yt:before {
+  content: "\e007";
+}
+.social a.yt:hover {
+  background-color: #fa5451;
+}
+.social a.yt:active {
+  background-color: #ce221e;
+}
 html body .social-likes {
   margin: 2px 0 24px;
   pointer-events: all;
@@ -3533,32 +3612,32 @@ html body .social-likes_mobile {
 html body .social-likes__widget {
   margin: 0 2px 0 0;
   float: left;
-}
-html body .social-likes__button {
-  line-height: 27px;
-  font-size: 11px;
-  font-weight: 300;
-  padding: 0 8px 0 26px;
-  -webkit-font-smoothing: auto;
   transition: background-color 0.15s;
 }
-html body .social-likes__button_facebook {
+html body .social-likes__widget_facebook {
   background-color: #325a97;
 }
-html body .social-likes__button_facebook:hover {
+html body .social-likes__widget_facebook:hover {
   background-color: #233f69;
 }
-html body .social-likes__button_twitter {
+html body .social-likes__widget_twitter {
   background-color: #00aced;
 }
-html body .social-likes__button_twitter:hover {
+html body .social-likes__widget_twitter:hover {
   background-color: #0080b0;
 }
-html body .social-likes__button_pinterest {
+html body .social-likes__widget_pinterest {
   background-color: #cc2127;
 }
-html body .social-likes__button_pinterest:hover {
+html body .social-likes__widget_pinterest:hover {
   background-color: #97181d;
+}
+html body .social-likes__button {
+  line-height: 35px;
+  font-size: 13px;
+  font-weight: 300;
+  padding: 0 10px 0 30px;
+  -webkit-font-smoothing: auto;
 }
 html body .social-likes__icon {
   left: 8px;
@@ -3577,6 +3656,39 @@ html body .social-likes__icon {
   html>body .social-likes_both,
   html>body .social-likes_mobile {
     display: block;
+  }
+}
+#social {
+  width: 100%;
+  display: block;
+  margin-top: 50px;
+  height: 140px;
+}
+#likearticle h3,
+#likesite h3 {
+  font-size: 19px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+#likearticle {
+  width: 47%;
+  float: left;
+  text-align: right;
+}
+#likesite {
+  width: 47%;
+  float: right;
+  text-align: left;
+}
+.fb-like iframe {
+  max-width: none !important;
+}
+@media (max-width: 740px) {
+  #likearticle h3,
+  #likesite h3 {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 11px;
   }
 }
 

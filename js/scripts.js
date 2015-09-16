@@ -16,8 +16,32 @@ Contacts = (function() {
 
   Contacts.prototype.sendMessage = function(event) {
     event.preventDefault();
-    this.form.closest('section.contacts').hide();
-    return this.success.show();
+    return $.ajax({
+      type: "POST",
+      url: "https://mandrillapp.com/api/1.0/messages/send.json",
+      data: {
+        "key": "aG3qodBxJFzJhMPyO1y_EQ",
+        "message": {
+          "to": [
+            {
+              "email": "ravenb@mail.ru",
+              "name": "Anton Nemtsev",
+              "type": "to"
+            }
+          ],
+          "subject": "Message from VacayKit contact us form",
+          "from_email": this.form.find('input[name="email"]').val().trim(),
+          "from_name": this.form.find('input[name="name"]').val().trim(),
+          "text": this.form.find('textarea[name="message"]').val().trim()
+        }
+      }
+    }).done((function(_this) {
+      return function(response) {
+        _this.form.closest('section.contacts').hide();
+        _this.success.show();
+        return console.log(response);
+      };
+    })(this));
   };
 
   return Contacts;
@@ -28,12 +52,10 @@ $(document).ready(function() {
   return new Contacts;
 });
 
-var Country,
-  bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
+var Country;
 
 Country = (function() {
   function Country() {
-    this.countryData = bind(this.countryData, this);
     var currency_title;
     this.widget = $('.page[data-code]');
     this.country_code = this.widget.attr('data-code');
@@ -42,15 +64,7 @@ Country = (function() {
       this.currency = window.currency_info[this.country_code].currencyId;
       $('.info__currency-name').text(currency_title);
     }
-    if ($('.info__capital').length > 0) {
-      $.get('https://restcountries.eu/rest/v1/alpha/' + this.country_code).success(this.countryData);
-    }
   }
-
-  Country.prototype.countryData = function(data) {
-    this.widget.find('.info__capital .info__details p').text(data.capital);
-    return $('.info__capital').fadeIn();
-  };
 
   return Country;
 
