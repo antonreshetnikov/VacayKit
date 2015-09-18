@@ -1,157 +1,159 @@
 extends ../partials/layout.jade
 
 block title
-  title Long Flight Kit | VacayKit
+    title Long Flight Kit | VacayKit
 
 block content
-  header.fly-bg
-    
-    +header_navigation
+    header.fly-bg
 
-    .wrapper
-      h2.kit.kit_fly
-        span.kit__name Long Flight Kit
-        span.kit__count 8 kits
+        +header_navigation
 
-      a.subscribe(href="#") Get my Packing List
+        .wrapper
+            h2.kit.kit_fly
+                span.kit__name Long Flight Kit
+                span.kit__count 8 kits
 
-  section.page
+            a.subscribe(href="#") Get my Packing List
 
-    section.page__header
+    section.page
 
-      section.page__section.page__section_open
+        section.page__header
 
-        aside.info.info_mobile-hidden
+            section.page__section.page__section_open
 
-          section.info__social
-            h2.info__title Share with friends
-            .info__details
-              .social-likes.social-likes_vertical
-                .facebook(title="Share link on Facebook") Share
-                .twitter(title="Share link on Twitter",  data-via="vacaykit") Tweet
-                .pinterest(title="Share image on Pinterest", data-media="images/header_bg_5.jpg") Pin
+                aside.info.info_mobile-hidden
 
-        section.brief
+                    section.info__social
+                        h2.info__title Share with friends
+                        .info__details
+                            .social-likes.social-likes_vertical
+                                .facebook(title="Share link on Facebook") Share
+                                .twitter(title="Share link on Twitter",  data-via="vacaykit") Tweet
+                                .plusone(title="Share link on Google+") Plus
+                                .pinterest(title="Share image on Pinterest", data-media="images/header_bg_5.jpg") Pin
 
-          p Ditch the usual tourist traps and vacation like a native—on foot! With 50 adventures to choose from in each deck, just pick a card from the deck and be on your way.
+                section.brief
 
-          p Whether you're a first time visitor to the city, or just want to discover new terrain, City Walks gives you an intimate view.
-          
-          .social-likes.social-likes_mobile
-            .facebook(title="Share link on Facebook") Share
-            .twitter(title="Share link on Twitter",  data-via="vacaykit") Tweet
-            .pinterest(title="Share image on Pinterest", data-media="images/header_bg_5.jpg") Pin
+                    p Ditch the usual tourist traps and vacation like a native—on foot! With 50 adventures to choose from in each deck, just pick a card from the deck and be on your way.
 
-      button.page__subscribe(type="button") Get the Packing List
-      
-    section.items
+                    p Whether you're a first time visitor to the city, or just want to discover new terrain, City Walks gives you an intimate view.
 
-      ol.items__list
+                    .social-likes.social-likes_mobile
+                        .facebook(title="Share link on Facebook") Share
+                        .twitter(title="Share link on Twitter",  data-via="vacaykit") Tweet
+                        .plusone(title="Share link on Google+") Plus
+                        .pinterest(title="Share image on Pinterest", data-media="images/header_bg_5.jpg") Pin
 
-        li.item
-          h3.item__title High sun protection body
-          .item__abstract
-            p Everyone needs sunscreen to protect their skin from damaging UV rays from the sun and sunburn. Using sunscreen products decreases the chances for sunburn and can prevent skin cancer or malignant melanoma.
-          .item__elements-wrapper
-            .item__elements
-              a.item__element(href="#")
-                .item__photo
-                  img(src="/images/item-1.jpg", alt="Фотография")
-                .item__details
-                  .item__info Avene Thermal Spring water spray 300 ml, 10.5 -Ounce Package
-                  .item__rating
-                    .stars
-                      .stars__current(style="width: 50%;", data-value="50")
-                    .item__votes 101 reviews
-                .item__price.item__price_amazon
-                  strong.item__price-current $14.57
-                  del.item__price-old $157.12
+            button.page__subscribe(type="button") Get the Packing List
 
-        li.item
-          h3.item__title High sun protection face
+        section.items
 
-          .item__elements-wrapper
-            .item__elements
+            ol.items__list
 
-              a.item__element(href="#")
-                .item__photo
-                  img(src="/images/item-1.jpg", alt="Фотография")
-                .item__details
-                  .item__info Avene Thermal Spring water spray 300 ml, 10.5 -Ounce Package
-                  .item__rating
-                    .stars
-                      .stars__current(style="width: 80%;", data-value="80")
-                    .item__votes 101 reviews
-                .item__price.item__price_amazon
-                  strong.item__price-current $123.57
+                li.item
+                    h3.item__title High sun protection body
+                    .item__abstract
+                        p Everyone needs sunscreen to protect their skin from damaging UV rays from the sun and sunburn. Using sunscreen products decreases the chances for sunburn and can prevent skin cancer or malignant melanoma.
+                    .item__elements-wrapper
+                        .item__elements
+                            a.item__element(href="#")
+                                .item__photo
+                                    img(src="/images/item-1.jpg", alt="Фотография")
+                                .item__details
+                                    .item__info Avene Thermal Spring water spray 300 ml, 10.5 -Ounce Package
+                                    .item__rating
+                                        .stars
+                                            .stars__current(style="width: 50%;", data-value="50")
+                                        .item__votes 101 reviews
+                                .item__price.item__price_amazon
+                                    strong.item__price-current $14.57
+                                    del.item__price-old $157.12
 
-              a.item__element(href="#")
-                .item__photo
-                  img(src="/images/item-2.jpg", alt="Фотография")
-                .item__details
-                  .item__info Avene Thermal Spring Water 3 To Go Kit, 5.28 oz
-                  .item__rating
-                    .stars
-                      .stars__current(style="width: 100%;", data-value="100")
-                    .item__votes 390 reviews
-                .item__price.item__price_amazon
-                  strong.item__price-current $14.57
-                  del.item__price-old $157.12
+                li.item
+                    h3.item__title High sun protection face
 
-        li.item.item_important
-          h3.item__title Sun oil
-          .item__abstract
-            p Indication Dermatological care
+                    .item__elements-wrapper
+                        .item__elements
 
-          .item__elements-wrapper
-            .item__elements
-              a.item__element(href="#")
-                .item__photo
-                  img(src="/images/item-3.jpg", alt="Фотография")
-                .item__details
-                  .item__info Avene Thermal Spring water spray 300 ml, 10.5 -Ounce Package
-                  .item__rating
-                    .stars
-                      .stars__current(style="width: 100%;", data-value="100")
-                    .item__votes 390 reviews
-                .item__price.item__price_amazon
-                  strong.item__price-current $14.57
-                  del.item__price-old $157.12
+                            a.item__element(href="#")
+                                .item__photo
+                                    img(src="/images/item-1.jpg", alt="Фотография")
+                                .item__details
+                                    .item__info Avene Thermal Spring water spray 300 ml, 10.5 -Ounce Package
+                                    .item__rating
+                                        .stars
+                                            .stars__current(style="width: 80%;", data-value="80")
+                                        .item__votes 101 reviews
+                                .item__price.item__price_amazon
+                                    strong.item__price-current $123.57
 
-        li.item
-          h3.item__title UV protection shirt and shorts
-          .item__elements-wrapper
-            .item__elements
-              a.item__element(href="#")
-                .item__photo
-                  img(src="/images/item-4.jpg", alt="Фотография")
-                .item__details
-                  .item__info O'Neill UV Sun Protection Men's Basic Skins Tee Rashguard
-                  .item__rating
-                    .stars
-                      .stars__current(style="width: 80%;", data-value="80")
-                    .item__votes 101 reviews
-                .item__price.item__price_amazon
-                  strong.item__price-current $16.77 - $30.85
+                            a.item__element(href="#")
+                                .item__photo
+                                    img(src="/images/item-2.jpg", alt="Фотография")
+                                .item__details
+                                    .item__info Avene Thermal Spring Water 3 To Go Kit, 5.28 oz
+                                    .item__rating
+                                        .stars
+                                            .stars__current(style="width: 100%;", data-value="100")
+                                        .item__votes 390 reviews
+                                .item__price.item__price_amazon
+                                    strong.item__price-current $14.57
+                                    del.item__price-old $157.12
 
-              a.item__element(href="#")
-                .item__photo
-                  img(src="/images/item-5.jpg", alt="Фотография")
-                .item__details
-                  .item__info O'Neill UV Sun Protection Men's Basic Skins Long Sleeve Crew Rashguard
-                  .item__rating
-                    .stars
-                      .stars__current(style="width: 100%;", data-value="100")
-                    .item__votes 390 reviews
-                .item__price.item__price_amazon
-                  strong.item__price-current $16.77 - $30.85
+                li.item.item_important
+                    h3.item__title Sun oil
+                    .item__abstract
+                        p Indication Dermatological care
+
+                    .item__elements-wrapper
+                        .item__elements
+                            a.item__element(href="#")
+                                .item__photo
+                                    img(src="/images/item-3.jpg", alt="Фотография")
+                                .item__details
+                                    .item__info Avene Thermal Spring water spray 300 ml, 10.5 -Ounce Package
+                                    .item__rating
+                                        .stars
+                                            .stars__current(style="width: 100%;", data-value="100")
+                                        .item__votes 390 reviews
+                                .item__price.item__price_amazon
+                                    strong.item__price-current $14.57
+                                    del.item__price-old $157.12
+
+                li.item
+                    h3.item__title UV protection shirt and shorts
+                    .item__elements-wrapper
+                        .item__elements
+                            a.item__element(href="#")
+                                .item__photo
+                                    img(src="/images/item-4.jpg", alt="Фотография")
+                                .item__details
+                                    .item__info O'Neill UV Sun Protection Men's Basic Skins Tee Rashguard
+                                    .item__rating
+                                        .stars
+                                            .stars__current(style="width: 80%;", data-value="80")
+                                        .item__votes 101 reviews
+                                .item__price.item__price_amazon
+                                    strong.item__price-current $16.77 - $30.85
+
+                            a.item__element(href="#")
+                                .item__photo
+                                    img(src="/images/item-5.jpg", alt="Фотография")
+                                .item__details
+                                    .item__info O'Neill UV Sun Protection Men's Basic Skins Long Sleeve Crew Rashguard
+                                    .item__rating
+                                        .stars
+                                            .stars__current(style="width: 100%;", data-value="100")
+                                        .item__votes 390 reviews
+                                .item__price.item__price_amazon
+                                    strong.item__price-current $16.77 - $30.85
 
 
-      form.items-subscribe(action="/subscribe/", method="post")
-        h2.items-subscribe__title Get my Thailand packing list
-        fieldset.items-subscribe__line.items-subscribe__line_email
-          input.items-subscribe__input(type="email", name="email", placeholder="Email", required="required")
-          button.items-subscribe__submit(type="submit") Send
-        fieldset.items-subscribe__line.checkbox
-          input#items-subscribe__update.checkbox__input(type="checkbox", name="update")
-          label.checkbox__label(for="items-subscribe__update") Subscribe me to VacayKit monthly update
+            form.items-subscribe(action="/subscribe/", method="post")
+                h2.items-subscribe__title Get my Thailand packing list
+                fieldset.items-subscribe__line.items-subscribe__line_email
+                    input.items-subscribe__input(type="email", name="email", placeholder="Email", required="required")
+                    button.items-subscribe__submit(type="submit") Send
+                fieldset.items-subscribe__line.checkbox
+                    input#items-subscribe__update.checkbox__input(type="checkbox", name="update")
+                    label.checkbox__label(for="items-subscribe__update") Subscribe me to VacayKit monthly update
