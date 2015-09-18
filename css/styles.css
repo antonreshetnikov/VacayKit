@@ -3611,32 +3611,14 @@ html body .social-likes_alone {
 html body .social-likes_mobile {
   display: none;
 }
-html body .social-likes__icon {
-  left: 0;
-  padding-left: 11px;
-}
-html body .social-likes__icon_plusone:before {
-  font-family: 'icon';
-  content: "\e00B";
-}
-html body .social-likes__icon_facebook:before {
-  font-family: 'icon';
-  content: "\e00E";
-}
-html body .social-likes__icon_twitter:before {
-  font-family: 'icon';
-  content: "\e00D";
-}
-html body .social-likes__icon_pinterest:before {
-  font-family: 'icon';
-  content: "\e00C";
-}
 html body .social-likes__widget {
   margin: 0 11px 0 0;
   text-align: right;
   float: left;
   border-radius: 4px;
-  min-width: 85px;
+  position: relative;
+  width: 85px;
+  height: 35px;
   transition: background-color 0.15s;
 }
 html body .social-likes__widget_plusone {
@@ -3664,21 +3646,85 @@ html body .social-likes__widget_pinterest:hover {
   background-color: #97181d;
 }
 html body .social-likes__button {
+  height: 35px;
   line-height: 35px;
-  font-size: 13px;
+  width: 85px;
+  text-align: right;
+  font-size: 12px;
   font-weight: 300;
-  padding: 0 10px 0 40px;
-  min-width: 85px;
+  padding: 0 10px 0 30px;
   -webkit-font-smoothing: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+html body .social-likes__counter {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 10px;
+  font-weight: 300;
+  padding: 0 10px 0 0;
+  -webkit-font-smoothing: auto;
+  height: 35px;
+  line-height: 35px;
+  width: 55px;
+  text-align: right;
+  background-color: inherit;
+  border-radius: 4px;
 }
 html body .social-likes__icon {
-  left: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: absolute;
+  top: 0;
+  left: 10px;
+}
+html body .social-likes__icon:before {
+  font-size: 15px;
+  position: relative;
+  z-index: 1;
+}
+html body .social-likes__icon_plusone:before {
+  font-family: 'icon';
+  content: "\e00B";
+}
+html body .social-likes__icon_facebook:before {
+  font-family: 'icon';
+  content: "\e00E";
+}
+html body .social-likes__icon_twitter:before {
+  font-family: 'icon';
+  content: "\e00D";
+}
+html body .social-likes__icon_pinterest:before {
+  font-family: 'icon';
+  content: "\e00C";
 }
 @media (max-width: 1024px) {
   html body .social-likes {
     margin: 0 0 30px;
+  }
+}
+@media (max-width: 500px) {
+  html body .social-likes__widget {
+    margin: 0 8px 0 0;
+  }
+  html body .social-likes__icon:before {
+    font-size: 15px;
+  }
+  html body .social-likes__widget,
+  html body .social-likes__button,
+  html body .social-likes__counter {
+    width: 66px;
+    height: 28px;
+    line-height: 28px;
+  }
+  html body .social-likes__button {
+    font-size: 12px;
+  }
+  html body .social-likes__counter {
+    font-size: 10px;
   }
 }
 @media (max-width: 940px) {
