@@ -3650,7 +3650,7 @@ html body .social-likes__button {
   line-height: 35px;
   width: 85px;
   text-align: right;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 300;
   padding: 0 10px 0 30px;
   -webkit-font-smoothing: auto;
@@ -3662,7 +3662,7 @@ html body .social-likes__counter {
   position: absolute;
   top: 0;
   right: 0;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 300;
   padding: 0 10px 0 0;
   -webkit-font-smoothing: auto;
@@ -3681,7 +3681,7 @@ html body .social-likes__icon {
   left: 10px;
 }
 html body .social-likes__icon:before {
-  font-size: 15px;
+  font-size: 19px;
   position: relative;
   z-index: 1;
 }
